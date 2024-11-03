@@ -1,6 +1,10 @@
-import { IUserState } from "@domain/entities/UserEntity";
+interface IUserRedux {
+  email: string;
+  fullName: string;
+  token: string;
+}
 
-const userReduxInit: IUserState = {
+const userReduxInit: IUserRedux = {
   email: "",
   fullName: "",
   token: "",

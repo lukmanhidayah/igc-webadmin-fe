@@ -5,10 +5,7 @@ const APIEndpoints = {
     managementList: "dashboard/v1/menu/list",
     managementParent: "dashboard/v1/menu/parents",
   },
-  login: {
-    "/":  "dashboard/v1/login",
-    byEmail: "api/v1/portal-users/loginByEmail"
-  }
+  login: "api/login",
 };
 
 export default APIEndpoints;

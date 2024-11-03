@@ -1,7 +1,6 @@
 // src/presentation/components/LoginPage.tsx
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import AuthUseCase from "@domain/useCases/AuthUseCase";
 import LoginViewModel from "@viewModels/LoginViewModel";
 import Message from "@components/message/Message";
 import useErrorMessage, {
@@ -10,6 +9,7 @@ import useErrorMessage, {
 import { ILoginRequest } from "@domain/entities/LoginEntity";
 import LoginRightContent from "@components/login/LoginRightContent";
 import LoginLeftContent from "@components/login/LoginLeftContent";
+import LoginUseCase from "@domain/useCases/LoginUseCase";
 
 const LoginPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -19,26 +19,15 @@ const LoginPage: React.FC = () => {
 
   const handleLogin = async ({ email, password }: ILoginRequest) => {
     try {
-      const authUseCase = new AuthUseCase();
-      const loginViewModel = new LoginViewModel(authUseCase, dispatch);
+      const loginUseCase = new LoginUseCase();
+      const loginViewModel = new LoginViewModel(loginUseCase, dispatch);
 
       setIsLoading(true);
       await loginViewModel.login({ email, password });
-    } catch (error) {
+    } catch (error: any) {
       handleError(error);
     } finally {
       setIsLoading(false);
-    }
-  };
-
-  const handleLoginWithGoogle = async () => {
-    try {
-      const authUseCase = new AuthUseCase();
-      const loginViewModel = new LoginViewModel(authUseCase, dispatch);
-
-      await loginViewModel.loginWithGoogle();
-    } catch (error) {
-      handleError(error);
     }
   };
 
@@ -66,11 +55,7 @@ const LoginPage: React.FC = () => {
       <LoginLeftContent />
 
       {/* Right Section */}
-      <LoginRightContent
-        onSubmit={handleLogin}
-        loading={isLoading}
-        handleLoginWithGoogle={handleLoginWithGoogle}
-      />
+      <LoginRightContent onSubmit={handleLogin} loading={isLoading} />
     </div>
   );
 };

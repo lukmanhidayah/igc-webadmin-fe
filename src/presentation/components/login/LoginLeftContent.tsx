@@ -1,6 +1,6 @@
 import loginBg from "@assets/svg/login.svg";
 
-const LoginLoginContent = () => {
+const LoginLeftContent = () => {
   return (
     <div
       className="tw-w-4/6 tw-hidden lg:tw-flex tw-flex-col tw-justify-center tw-items-center tw-bg-primary-500 tw-text-white"
@@ -14,4 +14,4 @@ const LoginLoginContent = () => {
   );
 };
 
-export default LoginLoginContent;
+export default LoginLeftContent;
