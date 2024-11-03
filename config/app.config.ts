@@ -8,10 +8,10 @@ const config = {
   },
   baseURL: {
     dev: {
-      HOST_PHOENIX: "https://phoenix-imkas.ottodigital.id/",
+      HOST: "https://localhost:8000/",
     },
     prod: {
-      HOST_PHOENIX: "https://indosat-prod.ottodigital.id/",
+      HOST: "https://indosat-prod.ottodigital.id/",
     },
   },
 };
