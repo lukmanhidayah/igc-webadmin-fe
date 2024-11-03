@@ -7,7 +7,7 @@ import Message from "@components/message/Message";
 import useErrorMessage, {
   initUseErrorMessage,
 } from "@lib/hooks/useErrorMessage";
-import { IAuthForm } from "@domain/entities/UserEntity";
+import { ILoginRequest } from "@domain/entities/LoginEntity";
 import LoginRightContent from "@components/login/LoginRightContent";
 import LoginLeftContent from "@components/login/LoginLeftContent";
 
@@ -17,7 +17,7 @@ const LoginPage: React.FC = () => {
     useErrorMessage({ ...initUseErrorMessage });
   const dispatch = useDispatch();
 
-  const handleLogin = async ({ email, password }: IAuthForm) => {
+  const handleLogin = async ({ email, password }: ILoginRequest) => {
     try {
       const authUseCase = new AuthUseCase();
       const loginViewModel = new LoginViewModel(authUseCase, dispatch);

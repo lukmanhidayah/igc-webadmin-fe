@@ -1,12 +1,12 @@
-import { IAuthForm } from "@domain/entities/UserEntity";
 import LoginForm from "./LoginForm";
 import LoginFormProps from "./LoginForm.interface";
 import logo from "@assets/svg/logo.svg";
 import { Select } from "antd";
 import { useLanguageViewModel } from "@viewModels/useLanguageViewModel";
 import languages from "@lib/utils/languages";
+import { ILoginRequest } from "@domain/entities/LoginEntity";
 
-const LoginRightContent: React.FC<LoginFormProps<IAuthForm>> = ({
+const LoginRightContent: React.FC<LoginFormProps<ILoginRequest>> = ({
   loading,
   onSubmit,
 }) => {
@@ -30,7 +30,7 @@ const LoginRightContent: React.FC<LoginFormProps<IAuthForm>> = ({
             <h1 className="tw-text-2xl tw-font-semibold tw-text-left">
               {t("login.form.title")}
             </h1>
-            <p>{t('login.form.description')}</p>
+            <p>{t("login.form.description")}</p>
           </div>
           <LoginForm onSubmit={onSubmit} loading={loading} />
         </div>

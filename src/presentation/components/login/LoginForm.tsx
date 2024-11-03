@@ -3,10 +3,10 @@ import { useForm } from "react-hook-form";
 import LoginFormProps from "./LoginForm.interface";
 import InputField from "@components/form/input/InputField";
 import Button from "@components/form/button/Button";
-import { IAuthForm } from "@domain/entities/UserEntity";
 import { useLanguageViewModel } from "@viewModels/useLanguageViewModel";
+import { ILoginRequest } from "@domain/entities/LoginEntity";
 
-const LoginForm: React.FC<LoginFormProps<IAuthForm>> = ({
+const LoginForm: React.FC<LoginFormProps<ILoginRequest>> = ({
   onSubmit,
   loading,
 }) => {
@@ -14,7 +14,7 @@ const LoginForm: React.FC<LoginFormProps<IAuthForm>> = ({
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IAuthForm>();
+  } = useForm<ILoginRequest>();
 
   const { t } = useLanguageViewModel();
 
