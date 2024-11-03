@@ -1,0 +1,91 @@
+.sidebar {
+  @apply tw-absolute tw-min-h-full tw-shadow tw-bg-opacity-100 tw-bg-white tw-overflow-y-auto tw-z-50
+    md:tw-relative md:tw-py-1 
+    md:tw-min-h-screen;
+}
+
+.sidebar .sidebar-content {
+  @apply tw-fixed tw-overflow-y-auto tw-h-full;
+  width: 250px !important;
+}
+
+.sidebar-full {
+  width: 250px !important;
+  transition: width 0.5s;
+}
+
+.sidebar-hide {
+  width: 0px !important;
+  transition: width 0.5s;
+}
+
+.sidebar-hide .sidebar-content {
+  width: 0px !important;
+  transition: width 0.5s;
+}
+
+/* logo & logo container */
+.sidebar .sidebar-content .logo-container {
+  @apply tw-w-full tw-flex tw-flex-wrap tw-items-center tw-justify-start tw-pt-3 tw-px-4 tw-overflow-hidden tw-border-b tw-border-gray-200 tw-pb-4 tw-select-none tw-sticky tw-top-0 tw-bg-white tw-z-50 tw-gap-2;
+  width: 250px;
+}
+
+.sidebar-content .logo-container .logo {
+  @apply tw-font-semibold tw-text-base tw-text-black;
+}
+
+.sidebar-content-full .logo-container .logo,
+.sidebar .sidebar-content-full .close-container {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidebar-content-hide .logo-container .logo,
+.sidebar .sidebar-content-hide .close-container {
+  visibility: hidden;
+  opacity: 1;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
+.sidebar .sidebar-content .close-container {
+  @apply focus:tw-outline-none tw-p-2 hover:tw-bg-black hover:tw-bg-opacity-10 tw-rounded-full;
+}
+/* end of logo & logo container */
+
+.menu-item-container {
+  width: 250px;
+  height: calc(100% - 80px);
+}
+
+@media (min-width: 768px) {
+  .sidebar-full .wrapper-sidebar {
+    overflow: hidden;
+    overflow-y: auto;
+    width: 250px;
+    height: 100%;
+    transition: width 0.5s;
+  }
+
+  .sidebar-hide .wrapper-sidebar {
+    overflow: hidden;
+    overflow-y: auto;
+    width: 70px;
+    height: 100%;
+    transition: width 0.5s;
+  }
+
+  .sidebar-full {
+    width: 250px !important;
+    transition: width 0.5s;
+  }
+
+  .sidebar-hide {
+    width: 70px !important;
+    transition: width 0.5s;
+  }
+
+  .sidebar-hide .sidebar-content {
+    width: 70px !important;
+    transition: width 0.5s;
+  }
+}

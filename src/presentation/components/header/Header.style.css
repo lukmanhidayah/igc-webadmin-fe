@@ -1,0 +1,105 @@
+.header {
+  @apply tw-relative tw-shadow tw-grid tw-w-full tw-bg-white;
+  grid-template-columns: 1fr 1fr;
+  height: 72px;
+}
+
+.header .left-header {
+  @apply tw-w-full tw-py-2 tw-px-4 tw-flex tw-items-center;
+}
+
+.header .right-header {
+  @apply tw-relative tw-grid tw-w-full;
+  grid-template-columns: 48% 48%;
+  height: 100%;
+}
+
+.header .left-header .title-container {
+  @apply tw-ml-2 md:tw-ml-0;
+}
+
+.header .user-container {
+  @apply md:tw-relative tw-grid tw-grid-flow-col 
+  tw-auto-cols-max tw-gap-x-2 md:tw-gap-x-4 
+  tw-justify-end md:tw-justify-between tw-items-center 
+  tw-w-min md:tw-w-full tw-py-2 tw-px-5 focus:tw-outline-none tw-justify-self-end;
+}
+
+/* user content */
+
+.header .user-container .user-content {
+  @apply tw-flex tw-items-center tw-justify-center tw-p-2 focus:tw-outline-none tw-w-full tw-border-l;
+}
+
+.user-content .user-profile-container {
+  @apply tw-rounded tw-overflow-hidden;
+  width: 40px;
+  height: 40px;
+}
+
+.user-content .user-name-container {
+  @apply tw-hidden tw-ml-6 tw-flex-col tw-items-start
+  md:tw-flex;
+}
+
+.user-profile-container .user-profile {
+  @apply tw-bg-secondary-800 tw-bg-opacity-20 tw-w-full tw-h-full tw-antialiased tw-flex tw-justify-center tw-items-center tw-font-bold tw-text-gray-800;
+}
+
+/* end user content */
+
+/* icon container */
+.user-container .icon-container .icon {
+  @apply tw-w-4 tw-stroke-current tw-text-gray-500 tw-transition-all tw-duration-300;
+}
+/* end icon contianer */
+
+/* user menu */
+.user-container .user-menu-container {
+  @apply tw-absolute tw-left-0 tw-bg-white tw-shadow tw-mt-0 tw-w-full tw-rounded tw-text-left tw-overflow-hidden tw-rounded-t-none tw-border-t tw-border-gray-100 
+  md:tw-border-t-0 tw-opacity-0 tw-z-0;
+
+  animation-name: fadeUpIn;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  top: calc(100% + 2px);
+}
+
+.user-container .user-menu-container .user-menu {
+  @apply tw-flex tw-items-center tw-font-semibold tw-justify-between tw-text-sm tw-text-gray-700 tw-w-full tw-p-4
+  md:tw-px-10 
+  hover:tw-bg-secondary-800 hover:tw-bg-opacity-20
+  focus:tw-outline-none;
+}
+/* end of user menu */
+
+@media (min-width: 768px) {
+  .header {
+    grid-template-columns: 1fr 500px;
+    grid-column-gap: 20px;
+  }
+}
+
+@keyframes fadeUpIn {
+  from {
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeUpIn {
+  from {
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,54 @@
+.message-container {
+  @apply tw-fixed tw-z-100 tw-transform tw--translate-x-1/2 tw-p-2 tw-rounded tw-flex tw-justify-between tw-shadow tw-items-center;
+  width: 100%;
+  max-width: 400px;
+  animation-name: topTransition;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  left: 50%;
+}
+
+.error {
+  @apply tw-bg-red-200;
+}
+
+.success {
+  @apply tw-bg-green-200;
+}
+
+.message-text {
+  @apply tw-font-semibold;
+  width: calc(100% - 32px);
+}
+
+.message-icon {
+  @apply tw-text-red-800 tw-cursor-pointer tw-select-none;
+  width: 32px;
+}
+
+/* end of sidebar when active */
+@keyframes topTransition {
+  from {
+    top: -50vh;
+    opacity: 0;
+  }
+
+  to {
+    top: 80px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes topTransition {
+  from {
+    top: -50vh;
+    opacity: 0;
+  }
+
+  to {
+    top: 80px;
+    opacity: 1;
+  }
+}

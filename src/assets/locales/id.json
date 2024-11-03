@@ -1,0 +1,51 @@
+{
+  "login": {
+    "form": {
+      "title": "Senang bertemu kembali",
+      "description": "Selamat datang kembali! Silakan masukkan detail Anda.",
+      "password": {
+        "label": "Password",
+        "placeholder": "*******",
+        "not_null": "Password tidak boleh kosong",
+        "requirement": {
+          "info": "Password harus kombinasi dari:",
+          "requirement_1": "Minimal terdiri dari 8 karakter.",
+          "requirement_2": "Mengandung huruf kecil, huruf besar, dan angka.",
+          "requirement_3": "Mengandung spesial karakter (Cth: @,#,$)."
+        }
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Masukan email anda",
+        "not_null": "Email tidak boleh kosong",
+        "invalid": "Email tidak valid"
+      },
+      "login_button": "Masuk",
+      "error_message": "Sistem mengalami gangguan"
+    },
+    "banner": {
+      "title": "Solusi Pembayaran Digital yang tepat untuk Bisnis Anda",
+      "description": "Bersama kami, nikmati kemudahan pembayaran digital mulai dari menerima pembayaran, mengirim payout, serta kirim dana secara online, dengan mudah dan cepat."
+    }
+  },
+  "dashboard": {
+    "title": "Ringkasan",
+    "description": "Lihat ringkasan transaksi dan aktivitas bisnis Anda."
+  },
+  "certificate": {
+    "title": "Sertifikat",
+    "description": "List sertifikat yang telah di buat"
+  },
+  "memo": {
+    "title": "Memo",
+    "description": "List memo yang telah di buat"
+  },
+  "user": {
+    "title": "Pelanggan",
+    "description": "List pelanggan yang telah di buat"
+  },
+  "setting": {
+    "title": "Pengaturan",
+    "description": "List pengaturan yang telah di buat"
+  }
+}

@@ -1,0 +1,17 @@
+.on-sidebar-visible {
+  width: 100%;
+}
+
+.on-sidebar-invisible {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .on-sidebar-visible {
+    width: calc(100% - 250px);
+  }
+
+  .on-sidebar-invisible {
+    width: calc(100% - 70px);
+  }
+}

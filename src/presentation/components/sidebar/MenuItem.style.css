@@ -1,0 +1,92 @@
+.children-parent {
+  animation: topTransition 0.3s ease;
+}
+
+.sidebar-full .children-parent {
+  @apply tw-border-b;
+}
+
+.menu-item .sidebar-link {
+  @apply tw-w-full tw-cursor-pointer tw-px-6 tw-flex tw-h-16 tw-items-center tw-text-black 
+  hover:tw-bg-secondary-800 hover:tw-bg-opacity-20;
+}
+
+.sidebar-full .menu-item .sidebar-link-active {
+  @apply tw-shadow-bot;
+}
+.menu-item.active {
+  @apply tw-bg-secondary-800 tw-bg-opacity-20 tw-border-l-2 tw-border-secondary-800;
+
+}
+
+.menu-item .icon {
+  @apply tw-mr-5 tw-stroke-current tw-stroke-2 tw-text-black
+  md:tw-mr-0 lg:tw-mr-4;
+}
+.menu-item .sidebar-text {
+  @apply tw-text-sm tw-font-bold tw-text-black;
+}
+
+.menu-item .sidebar-child-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu-item .sidebar-child-hide {
+  visibility: hidden;
+  opacity: 1;
+}
+
+/* sidebar when active */
+.menu-item .active {
+  @apply tw-bg-black tw-bg-opacity-20 tw-text-black;
+}
+.menu-item .active .icon {
+  @apply tw-text-black;
+  margin-left: unset;
+}
+
+.children-container {
+  @apply tw-relative tw-flex tw-h-14 tw-pl-14 tw-pr-6 tw-items-center tw-justify-between tw-w-full tw-bg-background tw-bg-opacity-20 tw-cursor-pointer tw-text-black
+  hover:tw-bg-secondary-800 hover:tw-bg-opacity-20;
+  /* animation-name: topTransition;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; */
+}
+
+.children-container.active {
+  @apply tw-bg-secondary-800 tw-bg-opacity-20 tw-border-l-2 tw-border-secondary-800;
+}
+/* end of sidebar when active */
+@keyframes topTransition {
+  0% {
+    height: 0px;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    height: auto;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes topTransition {
+  0% {
+    height: 0px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    height: auto;
+    opacity: 1;
+  }
+}

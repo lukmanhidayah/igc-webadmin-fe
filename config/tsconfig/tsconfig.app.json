@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "paths": {
+      "@config/*": ["../*"],
+      "@assets/*": ["../../src/assets/*"],
+      "@styles/*": ["../../src/assets/styles/*"],
+      "@lottie-asset/*": ["../../src/assets/lottie-asset/*"],
+      "@domain/*": ["../../src/domain/*"],
+      "@entities/*": ["../../src/domain/entities/*"],
+      "@useCases/*": ["../../src/domain/useCases/*"],
+      "@redux/*": ["../../src/infrastructure/redux/*"],
+      "@api/*": ["../../src/infrastructure/api/*"],
+      "@lib/*": ["../../src/lib/*"],
+      "@services/*": ["../../src/infrastructure/services/*"],
+      "@firebaseService/*": ["../../src/infrastructure/firebaseService/*"],
+      "@components/*": ["../../src/presentation/components/*"],
+      "@viewModels/*": ["../../src/presentation/viewModels/*"],
+      "@pages/*": ["../../src/presentation/pages/*"],
+      "@routes/*": ["../../src/presentation/routes/*"]
+    },
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["../../src", "../../config"]
+}
