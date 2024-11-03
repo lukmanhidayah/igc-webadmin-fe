@@ -7,9 +7,8 @@
  * @property {string} token - The authentication token of the user.
  */
 export interface IUserState {
-  email: string;
-  fullName: string;
   token: string;
+  expires_at: string;
 }
 
 /**
@@ -22,9 +21,4 @@ export interface IUserState {
 export interface IAuthForm {
   email: string;
   password: string;
-}
-
-
-export interface ILanguageState {
-  value: "id" | "en";
 }

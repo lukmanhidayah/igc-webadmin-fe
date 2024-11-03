@@ -29,3 +29,13 @@ export interface IDashboardState {
     menu: IMenu[];
   })[];
 }
+
+/**
+ * Represents the state of the language settings.
+ *
+ * @interface ILanguageState
+ * @property {"id" | "en"} value - The current language value, either "id" for Indonesian or "en" for English.
+ */
+export interface ILanguageState {
+  value: "id" | "en";
+}

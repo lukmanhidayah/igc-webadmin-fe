@@ -1,4 +1,4 @@
-import { ILanguageState } from "@domain/entities/UserEntity";
+import { ILanguageState } from "@domain/entities/DashboardEntity";
 
 const languageReduxInit: ILanguageState = {
   value: "id",
