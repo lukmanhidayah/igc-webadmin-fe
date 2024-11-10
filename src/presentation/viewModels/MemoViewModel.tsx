@@ -30,7 +30,7 @@ class MemoViewModel {
         this.setTable((prevState) => ({
           ...prevState,
           data: response.data,
-          total: response.meta.pagination.total,
+          total: response.meta?.pagination?.total,
         }));
       }
 
