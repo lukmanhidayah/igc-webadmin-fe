@@ -3,7 +3,7 @@ import Button from "@components/form/button/Button";
 import PlusSquareIcon from "@components/icon/PlusSquareIcon";
 import { useLanguage } from "@lib/hooks/useLanguage";
 
-const UserPage = () => {
+const CustomerPage = () => {
   const { t } = useLanguage();
   return (
     <div className="tw-m-0 tw-p-6 ">
@@ -27,4 +27,4 @@ const UserPage = () => {
   );
 };
 
-export default UserPage;
+export default CustomerPage;

@@ -3,7 +3,7 @@ import DashboardPage from "@pages/dashboard/DashboardPage";
 import LoginPage from "@pages/login/LoginPage";
 import MemoPage from "@pages/memo/MemoPage";
 import SettingPage from "@pages/setting/SettingPage";
-import UserPage from "@pages/user/UserPage";
+import CustomerPage from "@pages/customer/UserPage";
 
 type TRoutes = { path: string; isAuth: boolean; element: JSX.Element }[];
 
@@ -34,9 +34,9 @@ const routes: TRoutes = [
     element: <MemoPage />,
   },
   {
-    path: "/user",
+    path: "/customer",
     isAuth: true,
-    element: <UserPage />,
+    element: <CustomerPage />,
   },
   {
     path: "/setting",

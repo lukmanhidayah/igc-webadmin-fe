@@ -32,7 +32,7 @@ const menus = [
   {
     menuId: 4,
     menuName: {
-      en: "User",
+      en: "Customer",
       id: "Pelanggan",
     },
     url: "/user",
