@@ -1,18 +1,25 @@
-import { ICertificateTableState } from "@domain/entities/CertificateEntity";
+import { ICertificateData, ICertificateTableState } from "@domain/entities/CertificateEntity";
 import CertificateUseCase from "@domain/useCases/CertificateUseCase";
 import logger from "@lib/utils/logger";
 import { SetStateAction } from "react";
+import { SubmitHandler } from "react-hook-form";
 
 class CertificateViewModel {
   private certificateUseCase: CertificateUseCase;
   private setTable: (value: SetStateAction<ICertificateTableState>) => void;
+  private setIsModalOpen: (value: SetStateAction<boolean>) => void;
+  private resetForm: () => void;
 
   constructor(
     certificateUseCase: CertificateUseCase,
-    setTable: (value: SetStateAction<ICertificateTableState>) => void
+    setTable: (value: SetStateAction<ICertificateTableState>) => void,
+    setIsModalOpen: (value: SetStateAction<boolean>) => void,
+    resetForm: () => void
   ) {
     this.certificateUseCase = certificateUseCase;
     this.setTable = setTable;
+    this.setIsModalOpen = setIsModalOpen;
+    this.resetForm = resetForm;
   }
 
   async getCertificate(token: string) {
@@ -46,6 +53,20 @@ class CertificateViewModel {
       }));
     }
   }
+
+  handleModalOpen = () => {
+    this.setIsModalOpen(true);
+  };
+
+  handleModalClose = () => {
+    this.setIsModalOpen(false);
+    this.resetForm();
+  };
+
+  handleFormSubmit: SubmitHandler<ICertificateData> = (data) => {
+    console.log(data);
+    this.setIsModalOpen(false);
+  };
 }
 
 export default CertificateViewModel;

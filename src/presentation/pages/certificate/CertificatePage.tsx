@@ -1,9 +1,12 @@
 import CertificateColumn from "@components/certificate/CertificateColumn";
 import CertificateTable from "@components/certificate/CertificateTable";
 import HeaderContent from "@components/dashboard/layout/HeaderContent";
-import Button from "@components/form/button/Button";
+import { Modal, Button } from "antd";
 import PlusSquareIcon from "@components/icon/PlusSquareIcon";
-import { ICertificateTableState } from "@domain/entities/CertificateEntity";
+import {
+  ICertificateData,
+  ICertificateTableState,
+} from "@domain/entities/CertificateEntity";
 import CertificateUseCase from "@domain/useCases/CertificateUseCase";
 import { useLanguage } from "@lib/hooks/useLanguage";
 import logger from "@lib/utils/logger";
@@ -11,16 +14,24 @@ import { selectToken } from "@redux/user/userReduxSelector";
 import CertificateViewModel from "@viewModels/CertificateViewModel";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useForm } from "react-hook-form";
+import CertificateForm from "@components/certificate/CertificateForm";
 
 const CertificatePage = () => {
-  
   // get language and t function to change language
   const { t } = useLanguage();
 
-  // get token from redux
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+    setValue,
+  } = useForm<ICertificateData>({});
+
   const token = useSelector(selectToken);
 
-  // set state for table
   const [table, setTable] = useState<ICertificateTableState>({
     currentPage: 1,
     isLoading: true,
@@ -29,21 +40,40 @@ const CertificatePage = () => {
     data: [],
   });
 
+  const certificateViewModel = new CertificateViewModel(
+    new CertificateUseCase(),
+    setTable,
+    setIsModalOpen,
+    reset
+  );
+
   useEffect(() => {
     getCertificate();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getCertificate = async () => {
-    const certificateUseCase = new CertificateUseCase();
-    const certificateViewModel = new CertificateViewModel(
-      certificateUseCase,
-      setTable
-    );
     await certificateViewModel.getCertificate(token);
   };
+
   return (
     <div className="tw-m-0 tw-p-6 ">
+      <Modal
+        title="Tambah Sertifikat"
+        open={isModalOpen}
+        centered
+        footer={null}
+        onCancel={certificateViewModel.handleModalClose}
+      >
+        <CertificateForm
+          register={register}
+          handleSubmit={handleSubmit}
+          onSubmit={certificateViewModel.handleFormSubmit}
+          onReset={reset}
+          setValue={setValue}
+          errors={errors}
+        />
+      </Modal>
       <div className="min-h-screen-with-header tw-bg-white tw-rounded tw-shadow">
         <HeaderContent
           title={t("certificate.title")}
@@ -51,12 +81,13 @@ const CertificatePage = () => {
         >
           <div className="tw-w-full tw-flex tw-justify-end tw-items-center">
             <Button
-              type="button"
-              title="Add new data"
+              onClick={certificateViewModel.handleModalOpen}
+              type="primary"
               icon={<PlusSquareIcon />}
-              variant="fullColor"
-              className="tw-gap-x-2 tw-bg-primary-500 !tw-w-[150px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
-            />
+              className=" tw-bg-primary-500 !tw-h-[50px] !tw-w-[150px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
+            >
+              Add new data
+            </Button>
           </div>
         </HeaderContent>
         <CertificateTable
