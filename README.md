@@ -1,6 +1,6 @@
 # Dashboard IGC
 
-Otto Edu CMS is a Content Management System designed to manage educational content efficiently. It provides a user-friendly interface for creating, updating, and deleting courses. The system is built using modern web technologies including React for the frontend, Express.js for the backend, and MongoDB for the database.
+GRI CMS is a Content Management System designed to manage educational content efficiently. It provides a user-friendly interface for creating, updating, and deleting courses. The system is built using modern web technologies including React for the frontend, Express.js for the backend, and MongoDB for the database.
 
 Currently, two official plugins are available:
 
