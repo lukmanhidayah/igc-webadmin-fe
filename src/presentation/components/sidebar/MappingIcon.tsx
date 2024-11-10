@@ -30,70 +30,85 @@ import XIcon from "@components/icon/XIcon";
 
 type MappingTIcon = {
   iconType: string;
+  className?: string;
 };
 
 const MappingIcon = (props: MappingTIcon) => {
   switch (props.iconType) {
     case "home":
-      return <HomeIcon width={24} height={24} viewBox="0 0 24 24" />;
+      return <HomeIcon width={24} height={24} className={props.className} />;
     case "image":
-      return <ImageIcon width={24} height={24} viewBox="0 0 24 24" />;
+      return <ImageIcon width={24} height={24} className={props.className} />;
     case "card":
-      return <CardIcon width={24} height={24} viewBox="0 0 24 24" />;
+      return <CardIcon width={24} height={24} className={props.className} />;
     case "list":
-      return <ListIcon width={24} height={24} viewBox="0 0 24 24" />;
+      return <ListIcon width={24} height={24} className={props.className} />;
     case "tag":
-      return <TagIcon width={24} height={24} viewBox="0 0 24 24" />;
+      return <TagIcon width={24} height={24} className={props.className} />;
     case "phone":
-      return <PhoneIcon width={24} height={24} viewBox="0 0 24 24" />;
+      return <PhoneIcon width={24} height={24} className={props.className} />;
     case "dollar":
-      return <DollarIcon width={24} height={24} viewBox="0 0 24 24" />;
+      return <DollarIcon width={24} height={24} className={props.className} />;
     case "promo":
-      return <PromoIcon height={28} width={28} />;
+      return <PromoIcon height={28} width={28} className={props.className} />;
     case "flash":
-      return <FlashIcon width={28} />;
+      return <FlashIcon width={28} className={props.className} />;
     case "credit-card":
-      return <CreditCardIcon width={28} />;
+      return <CreditCardIcon width={28} className={props.className} />;
     case "game":
-      return <GameIcon width={28} />;
+      return <GameIcon width={28} className={props.className} />;
     case "ticket":
-      return <TicketIcon width={28} />;
+      return <TicketIcon width={28} className={props.className} />;
     case "wallet":
-      return <WalletIcon width={28} />;
+      return <WalletIcon width={28} className={props.className} />;
     case "percent":
-      return <PercentIcon width={28} />;
+      return <PercentIcon width={28} className={props.className} />;
     case "eye":
-      return <EyeIcon width={28} />;
+      return <EyeIcon width={28} className={props.className} />;
     case "eye-off":
-      return <EyeOffIcon width={28} />;
+      return <EyeOffIcon width={28} className={props.className} />;
     case "setting":
-      return <SettingIcon width={24} height={24} viewBox="0 0 24 24" />;
+      return (
+        <SettingIcon
+          width={24}
+          height={24}
+          viewBox="0 0 24 24"
+          className={props.className}
+        />
+      );
     case "chart":
-      return <ChartIcon width={24} height={24} viewBox="0 0 24 24" />;
+      return (
+        <ChartIcon
+          width={24}
+          height={24}
+          viewBox="0 0 24 24"
+          className={props.className}
+        />
+      );
     case "click":
-      return <ClickIcon width={28} height={28} />;
+      return <ClickIcon width={28} height={28} className={props.className} />;
     case "filter":
-      return <FilterIcon width={24} height={24} />;
+      return <FilterIcon width={24} height={24} className={props.className} />;
     case "excel":
-      return <ExcelIcon width={24} height={24} />;
+      return <ExcelIcon width={24} height={24} className={props.className} />;
     case "cert":
-      return <CertIcon width={24} height={24} />;
+      return <CertIcon width={24} height={24} className={props.className} />;
     case "memo":
-      return <MemoIcon width={24} height={24} />;
+      return <MemoIcon width={24} height={24} className={props.className} />;
     case "delete":
-      return <DeleteIcon width={24} height={24} />;
+      return <DeleteIcon width={24} height={24} className={props.className} />;
     case "dot":
-      return <DotIcon width={20} height={20} />;
+      return <DotIcon width={20} height={20} className={props.className} />;
     case "close":
-      return <XIcon width={20} height={20} />;
+      return <XIcon width={20} height={20} className={props.className} />;
     case "donate":
-      return <DonateIcon width={24} height={24} />;
+      return <DonateIcon width={24} height={24} className={props.className} />;
     case "code":
-      return <CodeIcon width={24} height={24} />;
+      return <CodeIcon width={24} height={24} className={props.className} />;
     case "user":
-      return <UserIcon width={24} height={24} />;
+      return <UserIcon width={24} height={24} className={props.className} />;
     default:
-      return <DotIcon width={20} height={20} />;
+      return <DotIcon width={20} height={20} className={props.className} />;
   }
 };
 
