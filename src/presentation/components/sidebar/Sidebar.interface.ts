@@ -11,6 +11,9 @@ export interface IMenuSidebar {
   isShowChild: boolean;
   menuId: number;
   iconType: string;
-  menuName: string;
+  menuName: {
+    en: string
+    id: string
+  };
   url: string;
 }

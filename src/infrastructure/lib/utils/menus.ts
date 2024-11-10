@@ -1,35 +1,50 @@
 const menus = [
   {
     menuId: 1,
-    menuName: "Dashboard",
+    menuName: {
+      en: "Dashboard",
+      id: "Dasbor",
+    },
     url: "/dashboard",
     iconType: "chart",
     menu: null,
   },
   {
     menuId: 2,
-    menuName: "Sertifikat",
+    menuName: {
+      en: "Certificate",
+      id: "Sertifikat",
+    },
     url: "/certificate",
     iconType: "cert",
     menu: null,
   },
   {
     menuId: 3,
-    menuName: "Memo",
+    menuName: {
+      en: "Memo",
+      id: "Memo",
+    },
     url: "/memo",
     iconType: "memo",
     menu: null,
   },
   {
     menuId: 4,
-    menuName: "Pelanggan",
+    menuName: {
+      en: "User",
+      id: "Pelanggan",
+    },
     url: "/user",
     iconType: "user",
     menu: null,
   },
   {
     menuId: 5,
-    menuName: "Pengaturan",
+    menuName: {
+      en: "Setting",
+      id: "Pengaturan",
+    },
     url: "/setting",
     iconType: "setting",
     menu: null,

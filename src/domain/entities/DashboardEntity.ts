@@ -12,7 +12,10 @@ export interface IMenu {
   menuId: number;
   isShowChild: boolean;
   iconType: string;
-  menuName: string;
+  menuName: {
+    en: string;
+    id: string;
+  };
   url: string;
   menu?: IMenu[];
 }

@@ -6,6 +6,7 @@ import logo from "@assets/svg/logo.svg";
 
 import "./Sidebar.style.css";
 import useSidebar from "@lib/hooks/useSidebar";
+import { useLanguage } from "@lib/hooks/useLanguage";
 
 const chooseTypeSidebar = (isFullSidebar: boolean, isHoverChildren: boolean) =>
   isFullSidebar || isHoverChildren ? "sidebar-full" : "sidebar-hide";
@@ -18,6 +19,7 @@ const Sidebar = ({
   onMouseLeaveMenuItem,
 }: ISidebar) => {
   const { sidebars, location } = useSidebar();
+  const { language } = useLanguage();
 
   return (
     <div
@@ -59,7 +61,7 @@ const Sidebar = ({
                 link={menu.url}
                 pathName={location.pathname}
                 isActive={menu.url === location.pathname}
-                name={menu.menuName}
+                name={menu.menuName[language]}
                 isHasChild={!!menu.menu?.length}
                 child={menu.menu}
                 menuId={menu.menuId}
