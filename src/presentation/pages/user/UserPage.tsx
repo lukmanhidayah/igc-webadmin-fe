@@ -1,7 +1,7 @@
 import HeaderContent from "@components/dashboard/layout/HeaderContent";
 import Button from "@components/form/button/Button";
 import PlusSquareIcon from "@components/icon/PlusSquareIcon";
-import { useLanguage } from "@viewModels/useLanguage";
+import { useLanguage } from "@lib/hooks/useLanguage";
 
 const UserPage = () => {
   const { t } = useLanguage();

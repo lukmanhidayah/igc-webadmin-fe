@@ -1,4 +1,3 @@
-import useSidebar from "@viewModels/useSidebar";
 import MenuItem from "./MenuItem";
 import BurgerIcon from "@components/icon/BurgerIcon";
 import ArrowLeftIcon from "@components/icon/ArrowLeftIcon";
@@ -6,6 +5,7 @@ import { IMenuSidebar, ISidebar } from "./Sidebar.interface";
 import logo from "@assets/svg/logo.svg";
 
 import "./Sidebar.style.css";
+import useSidebar from "@lib/hooks/useSidebar";
 
 const chooseTypeSidebar = (isFullSidebar: boolean, isHoverChildren: boolean) =>
   isFullSidebar || isHoverChildren ? "sidebar-full" : "sidebar-hide";

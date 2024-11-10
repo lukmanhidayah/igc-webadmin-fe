@@ -3,11 +3,11 @@ import BurgerIcon from "@components/icon/BurgerIcon";
 import ArrowDownIcon from "@components/icon/ArrowDownIcon";
 import toSimpleName from "../../../infrastructure/lib/utils/toSimpleName";
 import LogoutIcon from "@components/icon/LogoutIcon";
-import { useLanguage } from "@viewModels/useLanguage";
 import languages from "../../../infrastructure/lib/utils/languages";
-import useHeader from "@viewModels/useHeader";
 
 import "./Header.style.css";
+import useHeader from "@lib/hooks/useHeader";
+import { useLanguage } from "@lib/hooks/useLanguage";
 
 interface IHeader {
   onBurgerClick: React.MouseEventHandler<HTMLDivElement>;

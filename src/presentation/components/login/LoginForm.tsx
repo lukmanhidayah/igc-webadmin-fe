@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import LoginFormProps from "./LoginForm.interface";
 import InputField from "@components/form/input/InputField";
 import Button from "@components/form/button/Button";
-import { useLanguage } from "@viewModels/useLanguage";
 import { ILoginRequest } from "@domain/entities/LoginEntity";
+import { useLanguage } from "@lib/hooks/useLanguage";
 
 const LoginForm: React.FC<LoginFormProps<ILoginRequest>> = ({
   onSubmit,
