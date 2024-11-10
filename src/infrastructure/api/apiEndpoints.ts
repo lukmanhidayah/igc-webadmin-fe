@@ -6,7 +6,8 @@ const APIEndpoints = {
     managementParent: "dashboard/v1/menu/parents",
   },
   login: "api/login",
-  master: "api/masters?paginate=true"
+  master: "api/masters",
+  members: "api/members",
 };
 
 export default APIEndpoints;
