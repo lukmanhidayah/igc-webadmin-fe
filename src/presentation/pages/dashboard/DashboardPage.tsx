@@ -55,7 +55,7 @@ const DashboardPage = () => {
   ];
 
   return (
-    <div className="tw-m-0 tw-p-6 ">
+    <div className="tw-m-0 tw-p-6">
       <div className="tw-flex tw-flex-col tw-gap-4 tw-w-full">
         <div className="tw-flex tw-justify-between tw-w-full tw-gap-4">
           <div className="tw-w-full tw-bg-white tw-p-4 tw-rounded-md tw-shadow tw-overflow-hidden">
@@ -67,7 +67,7 @@ const DashboardPage = () => {
             </div>
 
             {/* Summary Cards */}
-            <div className="tw-grid tw-grid-cols-3 tw-gap-4 tw-mb-2">
+            <div className="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-4 tw-mb-2">
               {summaryData.map((item, index) => (
                 <Card key={index} className={`${item.color} tw-rounded-lg`}>
                   <div
