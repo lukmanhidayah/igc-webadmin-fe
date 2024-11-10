@@ -1,3 +1,6 @@
+import { ColumnsType, TablePaginationConfig } from "antd/es/table";
+import { IBaseState } from "./SharedEntity";
+
 /**
  * Represents a menu item in the dashboard and response api.
  *
@@ -33,12 +36,13 @@ export interface IDashboardState {
   })[];
 }
 
-/**
- * Represents the state of the language settings.
- *
- * @interface ILanguageState
- * @property {"id" | "en"} value - The current language value, either "id" for Indonesian or "en" for English.
- */
-export interface ILanguageState {
-  value: "id" | "en";
+export interface IColumn<T> {
+  onEdit: (row: T) => void;
+  onDetail: (row: T) => void;
+}
+
+export interface IDataTable<T> extends IBaseState {
+  data: T[];
+  columns: ColumnsType<T>;
+  onChange?: (pagination: TablePaginationConfig) => void;
 }

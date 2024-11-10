@@ -20,3 +20,34 @@ body.modal-open {
 body.root-body .min-h-screen-with-header {
   min-height: calc(100vh - 72px - 3rem);
 }
+
+
+:where(.css-dev-only-do-not-override-apn68).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th,
+:where(.css-dev-only-do-not-override-apn68).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > td {
+  background-color: #f7f8fb !important;
+}
+
+.h-data-table {
+  min-height: calc(100vh - 240px);
+}
+
+.ant-spin-container {
+  min-height: calc(100vh - 240px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ant-table-container {
+  border-bottom: none !important;
+}
+
+.ant-table-tbody > tr:last-child > td {
+  border-bottom: none;
+}

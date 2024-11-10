@@ -1,5 +1,5 @@
 import LoginUseCase from "@domain/useCases/LoginUseCase";
-import menus from "../../infrastructure/lib/utils/menus";
+import menus from "@lib/utils/menus";
 import { setSidebar } from "@redux/dashboard/dashboardReduxReducer";
 import { setUser } from "@redux/user/userReduxReducer";
 
