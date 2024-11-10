@@ -35,7 +35,7 @@ const menus = [
       en: "Customer",
       id: "Pelanggan",
     },
-    url: "/user",
+    url: "/customer",
     iconType: "user",
     menu: null,
   },
