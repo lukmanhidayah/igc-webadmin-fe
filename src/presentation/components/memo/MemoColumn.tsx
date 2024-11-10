@@ -52,7 +52,7 @@ const MemoColumn = (props: IColumn<IMemoData>): ColumnsType<IMemoData> => [
           <Button
             type="button"
             title={"Detail"}
-            onClick={() => props.onDetail(record)}
+            onClick={() => props.onDetail && props.onDetail(record)}
             variant="outline"
             className="tw-gap-x-2 tw-text-white tw-text-sm !tw-w-[70px] tw-bg-primary-600 tw-px-3 tw-py-1 active:tw-bg-primary-600 hover:tw-bg-primary-600 hover:tw-bg-opacity-80 active:tw-bg-opacity-80 tw-flex-1"
             rounded="middle"
