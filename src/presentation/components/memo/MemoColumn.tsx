@@ -1,12 +1,10 @@
 import Button from "@components/form/button/Button";
-import { ICertificateData } from "@domain/entities/CertificateEntity";
 import { IColumn } from "@domain/entities/DashboardEntity";
+import { IMemoData } from "@domain/entities/MemoEntity";
 import tailwindMerge from "@lib/utils/tailwindMerge";
 import { ColumnsType } from "antd/es/table";
 
-const CertificateColumn = (
-  props: IColumn<ICertificateData>
-): ColumnsType<ICertificateData> => [
+const MemoColumn = (props: IColumn<IMemoData>): ColumnsType<IMemoData> => [
   {
     title: "No",
     dataIndex: "index",
@@ -35,7 +33,7 @@ const CertificateColumn = (
     dataIndex: "created_by",
     key: "created_by",
   },
-  
+
   {
     title: "Action",
     key: "action",
@@ -68,4 +66,4 @@ const CertificateColumn = (
   },
 ];
 
-export default CertificateColumn;
+export default MemoColumn;

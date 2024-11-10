@@ -1,10 +1,10 @@
 import SpinnerLoading from "@components/loader/SpinnerLoading";
 import EmptyTable from "@components/table/EmptyTable";
-import { ICertificateData } from "@domain/entities/CertificateEntity";
 import { IDataTable } from "@domain/entities/DashboardEntity";
+import { IMemoData } from "@domain/entities/MemoEntity";
 import { Table } from "antd";
 
-const CertificateTable: React.FC<IDataTable<ICertificateData>> = (props) => (
+const MemoTable: React.FC<IDataTable<IMemoData>> = (props) => (
   <Table
     sticky
     caption
@@ -49,4 +49,4 @@ const CertificateTable: React.FC<IDataTable<ICertificateData>> = (props) => (
   ></Table>
 );
 
-export default CertificateTable;
+export default MemoTable;
