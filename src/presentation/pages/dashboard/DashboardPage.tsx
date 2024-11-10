@@ -159,7 +159,7 @@ const DashboardPage = () => {
             </div>
           </div>
           <div className="tw-w-5/12 tw-bg-white tw-p-4 tw-rounded-md tw-shadow tw-overflow-hidden">
-            <Title level={4}>Visitor Insights</Title>
+            <Title level={4}>Pengunjung</Title>
             <Line data={visitorData} />
           </div>
         </div>

@@ -1,18 +1,25 @@
-import { IMemoTableState } from "@domain/entities/MemoEntity";
+import { IMemoData, IMemoTableState } from "@domain/entities/MemoEntity";
 import MemoUseCase from "@domain/useCases/MemoUseCase";
 import logger from "@lib/utils/logger";
 import { SetStateAction } from "react";
+import { SubmitHandler } from "react-hook-form";
 
 class MemoViewModel {
   private memoUseCase: MemoUseCase;
   private setTable: (value: SetStateAction<IMemoTableState>) => void;
+  private setIsModalOpen: (value: SetStateAction<boolean>) => void;
+  private resetForm: () => void;
 
   constructor(
     memoUseCase: MemoUseCase,
-    setTable: (value: SetStateAction<IMemoTableState>) => void
+    setTable: (value: SetStateAction<IMemoTableState>) => void,
+    setIsModalOpen: (value: SetStateAction<boolean>) => void,
+    resetForm: () => void
   ) {
     this.memoUseCase = memoUseCase;
     this.setTable = setTable;
+    this.setIsModalOpen = setIsModalOpen;
+    this.resetForm = resetForm;
   }
 
   async getMemo(token: string) {
@@ -46,6 +53,20 @@ class MemoViewModel {
       }));
     }
   }
+
+  handleModalOpen = () => {
+    this.setIsModalOpen(true);
+  };
+
+  handleModalClose = () => {
+    this.setIsModalOpen(false);
+    this.resetForm();
+  };
+
+  handleFormSubmit: SubmitHandler<IMemoData> = (data) => {
+    console.log(data);
+    this.setIsModalOpen(false);
+  };
 }
 
 export default MemoViewModel;

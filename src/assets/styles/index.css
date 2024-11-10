@@ -22,16 +22,6 @@ body.root-body .min-h-screen-with-header {
 }
 
 
-:where(.css-dev-only-do-not-override-apn68).ant-table-wrapper
-  .ant-table-thead
-  > tr
-  > th,
-:where(.css-dev-only-do-not-override-apn68).ant-table-wrapper
-  .ant-table-thead
-  > tr
-  > td {
-  background-color: #f7f8fb !important;
-}
 
 .h-data-table {
   min-height: calc(100vh - 240px);
@@ -58,4 +48,5 @@ th.ant-table-cell{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  background-color: transparent !important;
 }

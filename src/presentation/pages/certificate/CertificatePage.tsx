@@ -84,7 +84,7 @@ const CertificatePage = () => {
               onClick={certificateViewModel.handleModalOpen}
               type="primary"
               icon={<PlusSquareIcon />}
-              className=" tw-bg-primary-500 !tw-h-[50px] !tw-w-[150px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
+              className=" tw-bg-primary-500 !tw-h-[40px] !tw-w-[150px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
             >
               Add new data
             </Button>
