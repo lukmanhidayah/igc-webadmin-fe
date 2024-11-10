@@ -1,4 +1,4 @@
-import logger from "@lib/utils/logger";
+import logger from "../lib/utils/logger";
 import { API } from "@api/APIInstance";
 import { IResponseEntity } from "@domain/entities/ResponseEntity";
 import { AxiosResponse } from "axios";

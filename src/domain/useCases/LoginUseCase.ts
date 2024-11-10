@@ -1,5 +1,5 @@
-import isNullOrEmpty from "@lib/utils/isNullOrEmpty";
-import logger from "@lib/utils/logger";
+import isNullOrEmpty from "../../infrastructure/lib/utils/isNullOrEmpty";
+import logger from "../../infrastructure/lib/utils/logger";
 import LoginService from "@services/LoginService";
 
 export default class LoginUseCase {

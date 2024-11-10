@@ -3,7 +3,7 @@ import LoginFormProps from "./LoginForm.interface";
 import logo from "@assets/svg/logo.svg";
 import { Select } from "antd";
 import { useLanguage } from "@viewModels/useLanguage";
-import languages from "@lib/utils/languages";
+import languages from "../../../infrastructure/lib/utils/languages";
 import { ILoginRequest } from "@domain/entities/LoginEntity";
 
 const LoginRightContent: React.FC<LoginFormProps<ILoginRequest>> = ({

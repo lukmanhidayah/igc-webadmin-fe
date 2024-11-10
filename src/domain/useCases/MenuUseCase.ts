@@ -1,4 +1,4 @@
-import logger from "@lib/utils/logger";
+import logger from "../../infrastructure/lib/utils/logger";
 import MenuService from "@services/MenuService";
 
 export default class MenuUseCase {

@@ -11,7 +11,7 @@
       "@useCases/*": ["../../src/domain/useCases/*"],
       "@redux/*": ["../../src/infrastructure/redux/*"],
       "@api/*": ["../../src/infrastructure/api/*"],
-      "@lib/*": ["../../src/lib/*"],
+      "@lib/*": ["../../src/infrastructure/lib/*"],
       "@services/*": ["../../src/infrastructure/services/*"],
       "@firebaseService/*": ["../../src/infrastructure/firebaseService/*"],
       "@components/*": ["../../src/presentation/components/*"],

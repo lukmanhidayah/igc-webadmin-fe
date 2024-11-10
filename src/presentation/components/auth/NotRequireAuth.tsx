@@ -3,8 +3,8 @@ import { Navigate, useLocation } from "react-router-dom";
 import INotRequireAuthProps from "./NotRequireAuth.interface";
 import { selectToken } from "@redux/user/userReduxSelector";
 import { selectSidebar } from "@redux/dashboard/dashboardReduxSelector";
-import isNullOrEmpty from "@lib/utils/isNullOrEmpty";
-import logger from "@lib/utils/logger";
+import isNullOrEmpty from "../../../infrastructure/lib/utils/isNullOrEmpty";
+import logger from "../../../infrastructure/lib/utils/logger";
 
 const NotRequireAuth: React.FC<INotRequireAuthProps> = ({ children }) => {
   const token = useSelector(selectToken);

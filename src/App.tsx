@@ -1,4 +1,4 @@
-import useHideRootLoading from "@lib/hooks/useHideRootLoading";
+import useHideRootLoading from "./infrastructure/lib/hooks/useHideRootLoading";
 import AppRoutes from "@routes/AppRoutes";
 import "@services/i18n";
 

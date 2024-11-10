@@ -5,7 +5,7 @@ import LoginViewModel from "@viewModels/LoginViewModel";
 import Message from "@components/message/Message";
 import useErrorMessage, {
   initUseErrorMessage,
-} from "@lib/hooks/useErrorMessage";
+} from "../../../infrastructure/lib/hooks/useErrorMessage";
 import { ILoginRequest } from "@domain/entities/LoginEntity";
 import LoginRightContent from "@components/login/LoginRightContent";
 import LoginLeftContent from "@components/login/LoginLeftContent";

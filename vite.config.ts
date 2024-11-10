@@ -33,7 +33,7 @@ export default ({ mode }: any) => {
         "@entities": path.resolve(__dirname, "src/domain/entities"),
         "@useCases": path.resolve(__dirname, "src/domain/useCases"),
         "@infrastructure": path.resolve(__dirname, "src/infrastructure"),
-        "@lib": path.resolve(__dirname, "src/lib"),
+        "@lib": path.resolve(__dirname, "src/infrastructure/lib"),
         "@redux": path.resolve(__dirname, "src/infrastructure/redux"),
         "@api": path.resolve(__dirname, "src/infrastructure/api"),
         "@services": path.resolve(__dirname, "src/infrastructure/services"),

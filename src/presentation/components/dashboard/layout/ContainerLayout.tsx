@@ -1,4 +1,4 @@
-import tailwindMerge from "@lib/utils/tailwindMerge";
+import tailwindMerge from "../../../../infrastructure/lib/utils/tailwindMerge";
 import IContainerLayoutProps from "./ContainerLayout.interface";
 
 import './ContainerLayout.style.css'

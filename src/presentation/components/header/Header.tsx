@@ -1,10 +1,10 @@
 import { Select } from "antd";
 import BurgerIcon from "@components/icon/BurgerIcon";
 import ArrowDownIcon from "@components/icon/ArrowDownIcon";
-import toSimpleName from "@lib/utils/toSimpleName";
+import toSimpleName from "../../../infrastructure/lib/utils/toSimpleName";
 import LogoutIcon from "@components/icon/LogoutIcon";
 import { useLanguage } from "@viewModels/useLanguage";
-import languages from "@lib/utils/languages";
+import languages from "../../../infrastructure/lib/utils/languages";
 import useHeader from "@viewModels/useHeader";
 
 import "./Header.style.css";
