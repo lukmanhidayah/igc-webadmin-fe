@@ -3,7 +3,7 @@ const menus = [
     menuId: 1,
     menuName: {
       en: "Dashboard",
-      id: "Dasbor",
+      id: "Dashboard",
     },
     url: "/dashboard",
     iconType: "chart",

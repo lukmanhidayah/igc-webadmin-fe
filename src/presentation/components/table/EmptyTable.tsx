@@ -17,7 +17,7 @@ const EmptyTable = ({
     >
       <EmptyIcon width={80} height={80} />
       <strong className="tw-text-lg tw-text-primary-500">{title}</strong>
-      {desc}
+      <p className="tw-text-black">{desc}</p>
     </div>
   );
 };

@@ -50,27 +50,25 @@ const CertificatePage = () => {
               title="Add new data"
               icon={<PlusSquareIcon />}
               variant="fullColor"
-              className="tw-gap-x-2 tw-bg-primary-500 !tw-w-[250px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
+              className="tw-gap-x-2 tw-bg-primary-500 !tw-w-[150px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
             />
           </div>
         </HeaderContent>
-        <div className="tw-p-4">
-          <CertificateTable
-            isLoading={table.isLoading}
-            data={table.data}
-            currentPage={table.currentPage}
-            pageSize={table.pageSize}
-            total={table.total}
-            columns={CertificateColumn({
-              onDelete(row) {
-                logger(row);
-              },
-              onEdit(row) {
-                logger(row);
-              },
-            })}
-          />
-        </div>
+        <CertificateTable
+          isLoading={table.isLoading}
+          data={table.data}
+          currentPage={table.currentPage}
+          pageSize={table.pageSize}
+          total={table.total}
+          columns={CertificateColumn({
+            onDetail(row) {
+              logger(row);
+            },
+            onEdit(row) {
+              logger(row);
+            },
+          })}
+        />
       </div>
     </div>
   );

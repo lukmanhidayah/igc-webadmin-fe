@@ -31,6 +31,10 @@ const CertificateTable: React.FC<IDataTable<ICertificateData>> = (props) => (
       },
     }}
     pagination={{
+      style: {
+        paddingRight: "16px",
+        paddingLeft: "16px",
+      },
       pageSize: props.pageSize,
       current: props.currentPage,
       total: props.total,
