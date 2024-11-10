@@ -13,8 +13,8 @@ const CustomerColumn = (props: IColumn<ICustomerData>): ColumnsType<ICustomerDat
   },
   {
     title: "No. Handphone",
-    dataIndex: "member_phone_number",
-    key: "member_phone_number",
+    dataIndex: "mobile_phone",
+    key: "mobile_phone",
   },
   {
     title: "Nama",
