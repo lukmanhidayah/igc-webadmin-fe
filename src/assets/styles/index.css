@@ -51,3 +51,11 @@ body.root-body .min-h-screen-with-header {
 .ant-table-tbody > tr:last-child > td {
   border-bottom: none;
 }
+
+
+th.ant-table-cell{
+  /* clamp use ... */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

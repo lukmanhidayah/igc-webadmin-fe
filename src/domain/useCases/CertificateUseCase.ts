@@ -1,6 +1,6 @@
 import CertificateService from "@services/CertificateService";
 import isNullOrEmpty from "../../infrastructure/lib/utils/isNullOrEmpty";
-import logger from "../../infrastructure/lib/utils/logger";
+import logger from "@lib/utils/logger";
 
 export default class CertificateUseCase {
   private certificateService = new CertificateService();

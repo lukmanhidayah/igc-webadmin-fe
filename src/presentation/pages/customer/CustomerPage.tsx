@@ -18,7 +18,7 @@ const CustomerPage = () => {
               title="Add new data"
               icon={<PlusSquareIcon />}
               variant="fullColor"
-              className="tw-gap-x-2 tw-bg-primary-500 !tw-w-[250px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
+              className="tw-gap-x-2 tw-bg-primary-500 !tw-w-[150px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
             />
           </div>
         </HeaderContent>

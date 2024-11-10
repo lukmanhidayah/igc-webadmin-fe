@@ -1,10 +1,9 @@
 import SpinnerLoading from "@components/loader/SpinnerLoading";
 import EmptyTable from "@components/table/EmptyTable";
 import { IDataTable } from "@domain/entities/DashboardEntity";
-import { IMemoData } from "@domain/entities/MemoEntity";
 import { Table } from "antd";
 
-const MemoTable: React.FC<IDataTable<IMemoData>> = (props) => (
+const DataTable: React.FC<IDataTable<any>> = (props) => (
   <Table
     sticky
     caption
@@ -49,4 +48,4 @@ const MemoTable: React.FC<IDataTable<IMemoData>> = (props) => (
   ></Table>
 );
 
-export default MemoTable;
+export default DataTable;

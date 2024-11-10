@@ -1,15 +1,15 @@
-import MemoService from "@services/MemoService";
+import CustomerService from "@services/CustomerService";
 import isNullOrEmpty from "@lib/utils/isNullOrEmpty";
 import logger from "@lib/utils/logger";
 
-export default class MemoUseCase {
-  private memoService = new MemoService();
+export default class CustomerUseCase {
+  private customerService = new CustomerService();
 
   async get(props: { token: string }) {
     try {
-      const result = await this.memoService.get({ token: props.token });
+      const result = await this.customerService.get({ token: props.token });
 
-      logger("MemoUseCase.get | response =>", result);
+      logger("CustomerUseCase.get | response =>", result);
 
       if (isNullOrEmpty(result?.data)) {
         throw new Error(result?.meta?.message ?? "Failed to certificate get");
@@ -20,7 +20,7 @@ export default class MemoUseCase {
       if (error.response?.status === 401) {
         window.location.href = "/login";
       } else {
-        logger("MemoUseCase.get | error =>", error);
+        logger("CustomerUseCase.get | error =>", error);
       }
       return null;
     }

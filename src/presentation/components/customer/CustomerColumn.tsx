@@ -1,9 +1,9 @@
 import Button from "@components/form/button/Button";
+import { ICustomerData } from "@domain/entities/CustomerEntity";
 import { IColumn } from "@domain/entities/DashboardEntity";
-import { IMemoData } from "@domain/entities/MemoEntity";
 import { ColumnsType } from "antd/es/table";
 
-const MemoColumn = (props: IColumn<IMemoData>): ColumnsType<IMemoData> => [
+const CustomerColumn = (props: IColumn<ICustomerData>): ColumnsType<ICustomerData> => [
   {
     title: "No",
     dataIndex: "index",
@@ -12,27 +12,15 @@ const MemoColumn = (props: IColumn<IMemoData>): ColumnsType<IMemoData> => [
     render: (_, _1, index) => index + 1, // Sequential number
   },
   {
-    title: "Kode",
-    dataIndex: "id",
-    key: "id",
-  },
-  {
-    title: "Nama",
-    dataIndex: "attributes.object_name",
-    key: "attributes.object_name",
-    render: (_, record) => record.attributes.object_name,
-  },
-  {
-    title: "Pelanggan",
+    title: "No. Handphone",
     dataIndex: "member_phone_number",
     key: "member_phone_number",
   },
   {
-    title: "Pembuat",
-    dataIndex: "created_by",
-    key: "created_by",
+    title: "Nama",
+    dataIndex: "nama",
+    key: "nama",
   },
-
   {
     title: "Action",
     key: "action",
@@ -63,4 +51,4 @@ const MemoColumn = (props: IColumn<IMemoData>): ColumnsType<IMemoData> => [
   },
 ];
 
-export default MemoColumn;
+export default CustomerColumn;
