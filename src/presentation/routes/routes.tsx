@@ -1,9 +1,9 @@
 import CertificatePage from "@pages/certificate/CertificatePage";
+import CustomerPage from "@pages/customer/CustomerPage";
 import DashboardPage from "@pages/dashboard/DashboardPage";
 import LoginPage from "@pages/login/LoginPage";
 import MemoPage from "@pages/memo/MemoPage";
 import SettingPage from "@pages/setting/SettingPage";
-import CustomerPage from "@pages/customer/UserPage";
 
 type TRoutes = { path: string; isAuth: boolean; element: JSX.Element }[];
 

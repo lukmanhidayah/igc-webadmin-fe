@@ -16,7 +16,7 @@ const EmptyTable = ({
       className={`tw-flex tw-p-24 tw-h-full tw-flex-col tw-justify-center tw-items-center tw-text-center ${className}`}
     >
       <EmptyIcon width={80} height={80} />
-      <strong className="tw-text-lg tw-text-primary-500">{title}</strong>
+      <strong className="tw-text-lg tw-text-black">{title}</strong>
       <p className="tw-text-black">{desc}</p>
     </div>
   );

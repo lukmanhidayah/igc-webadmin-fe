@@ -13,9 +13,14 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const CertificatePage = () => {
+  
+  // get language and t function to change language
   const { t } = useLanguage();
+
+  // get token from redux
   const token = useSelector(selectToken);
 
+  // set state for table
   const [table, setTable] = useState<ICertificateTableState>({
     currentPage: 1,
     isLoading: true,
