@@ -1,7 +1,6 @@
 import Button from "@components/form/button/Button";
 import { IColumn } from "@domain/entities/DashboardEntity";
 import { IMemoData } from "@domain/entities/MemoEntity";
-import tailwindMerge from "@lib/utils/tailwindMerge";
 import { ColumnsType } from "antd/es/table";
 
 const MemoColumn = (props: IColumn<IMemoData>): ColumnsType<IMemoData> => [
@@ -55,9 +54,7 @@ const MemoColumn = (props: IColumn<IMemoData>): ColumnsType<IMemoData> => [
             title={"Detail"}
             onClick={() => props.onDetail(record)}
             variant="outline"
-            className={tailwindMerge(
-              "tw-gap-x-2 tw-text-white tw-text-sm !tw-w-[80px] tw-bg-blue-500 tw-px-3 tw-py-1 active:tw-bg-blue-500 hover:tw-bg-blue-500 hover:tw-bg-opacity-80 active:tw-bg-opacity-80 tw-flex-1"
-            )}
+            className="tw-gap-x-2 tw-text-white tw-text-sm !tw-w-[70px] tw-bg-primary-600 tw-px-3 tw-py-1 active:tw-bg-primary-600 hover:tw-bg-primary-600 hover:tw-bg-opacity-80 active:tw-bg-opacity-80 tw-flex-1"
             rounded="middle"
           />
         </div>
