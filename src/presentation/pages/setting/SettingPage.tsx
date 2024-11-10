@@ -1,10 +1,10 @@
 import HeaderContent from "@components/dashboard/layout/HeaderContent";
 import Button from "@components/form/button/Button";
 import PlusSquareIcon from "@components/icon/PlusSquareIcon";
-import { useLanguageViewModel } from "@viewModels/useLanguageViewModel";
+import { useLanguage } from "@viewModels/useLanguage";
 
 const SettingPage = () => {
-  const { t } = useLanguageViewModel();
+  const { t } = useLanguage();
 
   return (
     <div className="tw-m-0 tw-p-6 ">

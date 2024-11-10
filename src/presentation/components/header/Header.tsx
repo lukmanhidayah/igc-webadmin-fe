@@ -3,7 +3,7 @@ import BurgerIcon from "@components/icon/BurgerIcon";
 import ArrowDownIcon from "@components/icon/ArrowDownIcon";
 import toSimpleName from "@lib/utils/toSimpleName";
 import LogoutIcon from "@components/icon/LogoutIcon";
-import { useLanguageViewModel } from "@viewModels/useLanguageViewModel";
+import { useLanguage } from "@viewModels/useLanguage";
 import languages from "@lib/utils/languages";
 import useHeader from "@viewModels/useHeader";
 
@@ -20,7 +20,7 @@ const Header = ({
   isHideUserMenu,
   onToggleModal,
 }: IHeader): JSX.Element => {
-  const { language, handleChangeLanguage } = useLanguageViewModel();
+  const { language, handleChangeLanguage } = useLanguage();
   const { fullName, onLogout } = useHeader();
 
   return (
