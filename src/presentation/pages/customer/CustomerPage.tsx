@@ -66,9 +66,6 @@ const CustomerPage = () => {
           pageSize={table.pageSize}
           total={table.total}
           columns={CustomerColumn({
-            onDetail(row) {
-              logger(row);
-            },
             onEdit(row) {
               logger(row);
             },
