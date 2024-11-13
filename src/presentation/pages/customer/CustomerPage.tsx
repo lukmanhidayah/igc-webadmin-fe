@@ -1,7 +1,6 @@
 import CustomerColumn from "@components/customer/CustomerColumn";
 import CustomerTable from "@components/customer/CustomerTable";
 import HeaderContent from "@components/dashboard/layout/HeaderContent";
-import Button from "@components/form/button/Button";
 import PlusSquareIcon from "@components/icon/PlusSquareIcon";
 import { ICustomerTableState } from "@domain/entities/CustomerEntity";
 import CustomerUseCase from "@domain/useCases/CustomerUseCase";
@@ -9,6 +8,7 @@ import { useLanguage } from "@lib/hooks/useLanguage";
 import logger from "@lib/utils/logger";
 import { selectToken } from "@redux/user/userReduxSelector";
 import CustomerViewModel from "@viewModels/CustomerViewModel";
+import { Button } from "antd";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -46,17 +46,17 @@ const CustomerPage = () => {
     <div className="tw-m-0 tw-p-6 ">
       <div className="min-h-screen-with-header tw-bg-white tw-rounded tw-shadow">
         <HeaderContent
-          title={t("user.title")}
-          description={t("user.description")}
+          title={t("customer.title")}
+          description={t("customer.description")}
         >
           <div className="tw-w-full tw-flex tw-justify-end tw-items-center">
             <Button
-              type="button"
-              title="Add new data"
+              type="primary"
               icon={<PlusSquareIcon />}
-              variant="fullColor"
-              className="tw-gap-x-2 tw-bg-primary-500 !tw-w-[150px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
-            />
+              className="!tw-h-[40px] !tw-w-[150px] tw-font-semibold tw-text-white"
+            >
+              Add new data
+            </Button>
           </div>
         </HeaderContent>
         <CustomerTable

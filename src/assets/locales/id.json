@@ -40,7 +40,7 @@
     "title": "Memo",
     "description": "List memo yang telah di buat"
   },
-  "user": {
+  "customer": {
     "title": "Pelanggan",
     "description": "List pelanggan yang telah di buat"
   },

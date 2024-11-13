@@ -40,7 +40,7 @@
     "title": "Memo",
     "description": "List of memos that have been created."
   },
-  "user": {
+  "customer": {
     "title": "Customer",
     "description": "List of customers that have been created."
   },

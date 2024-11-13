@@ -21,8 +21,6 @@ body.root-body .min-h-screen-with-header {
   min-height: calc(100vh - 72px - 3rem);
 }
 
-
-
 .h-data-table {
   min-height: calc(100vh - 240px);
 }
@@ -42,8 +40,7 @@ body.root-body .min-h-screen-with-header {
   border-bottom: none;
 }
 
-
-th.ant-table-cell{
+th.ant-table-cell {
   /* clamp use ... */
   white-space: nowrap;
   overflow: hidden;

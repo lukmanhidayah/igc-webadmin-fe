@@ -1,5 +1,4 @@
 import HeaderContent from "@components/dashboard/layout/HeaderContent";
-import Button from "@components/form/button/Button";
 import PlusSquareIcon from "@components/icon/PlusSquareIcon";
 import MemoColumn from "@components/memo/MemoColumn";
 import MemoForm from "@components/memo/MemoForm";
@@ -10,7 +9,7 @@ import { useLanguage } from "@lib/hooks/useLanguage";
 import logger from "@lib/utils/logger";
 import { selectToken } from "@redux/user/userReduxSelector";
 import MemoViewModel from "@viewModels/MemoViewModel";
-import { Modal } from "antd";
+import { Button, Modal } from "antd";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
@@ -82,13 +81,13 @@ const MemoPage = () => {
         >
           <div className="tw-w-full tw-flex tw-justify-end tw-items-center">
             <Button
-              type="button"
-              title="Add new data"
               onClick={memoViewModel.handleModalOpen}
+              type="primary"
               icon={<PlusSquareIcon />}
-              variant="fullColor"
-              className="tw-gap-x-2 tw-bg-primary-500 !tw-w-[150px] active:tw-bg-primary-600 hover:tw-bg-primary-600 md:tw-text-base tw-text-white"
-            />
+              className="!tw-h-[40px] !tw-w-[150px] tw-font-semibold tw-text-white"
+            >
+              Add new data
+            </Button>
           </div>
         </HeaderContent>
         <MemoTable

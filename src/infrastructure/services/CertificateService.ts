@@ -9,7 +9,7 @@ interface IGet {
 }
 
 class CertificateService {
-  async get(props: IGet): Promise<ICertificateResponse | null> {
+  async get(props: IGet): Promise<ICertificateResponse> {
     try {
       logger("CertificateService.get | token => ", props.token);
 
@@ -24,9 +24,7 @@ class CertificateService {
 
       logger("CertificateService.get | response => ", response.data);
 
-      return response.data
-        ? { meta: response.data.meta, data: response.data.data }
-        : null;
+      return response.data;
     } catch (error: any) {
       logger("CertificateService.get | error => ", error);
       throw error;

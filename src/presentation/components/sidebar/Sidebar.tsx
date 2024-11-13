@@ -20,6 +20,8 @@ const Sidebar = ({
 }: ISidebar) => {
   const { sidebars, location } = useSidebar();
   const { language } = useLanguage();
+  
+  console.log(location)
 
   return (
     <div
