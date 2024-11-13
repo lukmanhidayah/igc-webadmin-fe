@@ -3,6 +3,7 @@ import { useLanguage } from "@lib/hooks/useLanguage";
 import MappingIcon from "@components/sidebar/MappingIcon";
 import tailwindMerge from "@lib/utils/tailwindMerge";
 import { useState } from "react";
+import dashboardFilters from "@lib/utils/dashboardFilters";
 
 const summaryData = [
   {
@@ -28,17 +29,6 @@ const summaryData = [
     color: "tw-bg-[#F3E8FF]",
     icon: "memo",
     bgIcon: "tw-bg-purple-400",
-  },
-];
-
-const filters = [
-  {
-    label: "Today",
-    value: "today",
-  },
-  {
-    label: "This Month",
-    value: "thisMonth",
   },
 ];
 
@@ -69,7 +59,7 @@ const DashboardPage = () => {
                 suffixIcon
                 value={filter}
                 className="tw-w-[200px]"
-                options={filters}
+                options={dashboardFilters}
                 onChange={handleChangeFilter}
               />
             </div>
