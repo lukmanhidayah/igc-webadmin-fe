@@ -1,10 +1,7 @@
-import { Button, Form, Input, Select } from "antd";
-import {
-  UseFormHandleSubmit,
-  UseFormRegister,
-  UseFormSetValue,
-} from "react-hook-form";
-import { ICertificateData } from "@domain/entities/CertificateEntity";
+import { Button, Form } from "antd";
+import { ICertificateFormProps } from "@domain/entities/CertificateEntity";
+import FormInput from "@components/form/input/FormInput";
+import FormSelect from "@components/form/input/FormSelect";
 
 const customers = [
   { value: "Asep", label: "Asep" },
@@ -12,21 +9,11 @@ const customers = [
   { value: "Citra", label: "Citra" },
 ];
 
-interface CertificateFormProps {
-  onSubmit: (data: ICertificateData) => void;
-  onReset: () => void;
-  setValue: UseFormSetValue<ICertificateData>;
-  errors: any;
-  register: UseFormRegister<ICertificateData>;
-  handleSubmit: UseFormHandleSubmit<ICertificateData, undefined>;
-}
-
-const CertificateForm: React.FC<CertificateFormProps> = ({
+const CertificateForm: React.FC<ICertificateFormProps> = ({
   onSubmit,
   onReset,
-  setValue,
   errors,
-  register,
+  control,
   handleSubmit,
 }) => {
   return (
@@ -35,81 +22,24 @@ const CertificateForm: React.FC<CertificateFormProps> = ({
       onFinish={handleSubmit(onSubmit)}
       className="tw-space-y-4"
     >
-      <Form.Item
+      <FormSelect
+        name="member_phone_number"
         label="Customer"
-        validateStatus={errors.member_phone_number ? "error" : ""}
-        help={errors.member_phone_number?.message}
-      >
-        <Select
-          className="tw-w-full tw-h-10"
-          showSearch
-          onChange={(value) => setValue("member_phone_number", value)}
-          options={customers}
-        />
-      </Form.Item>
+        placeholder="Select your role"
+        options={customers}
+        control={control}
+        rules={{ required: "Customer is required" }}
+        error={errors.member_phone_number}
+      />
 
-      <Form.Item
-        label="Object Name"
-        validateStatus={errors.attributes?.object_name ? "error" : ""}
-        help={errors.attributes?.object_name?.message}
-      >
-        <Input
-          className="tw-py-2"
-          {...register("attributes.object_name", {
-            required: "Object Name is required",
-          })}
-        />
-      </Form.Item>
-
-      <Form.Item
+      <FormInput
+        name="attributes.measurement"
         label="Measurement"
-        validateStatus={errors.attributes?.measurement ? "error" : ""}
-        help={errors.attributes?.measurement?.message}
-      >
-        <Input
-          className="tw-py-2"
-          {...register("attributes.measurement", {
-            required: "Measurement is required",
-          })}
-        />
-      </Form.Item>
-
-      <Form.Item
-        label="Clarity"
-        validateStatus={errors.attributes?.clarity ? "error" : ""}
-        help={errors.attributes?.clarity?.message}
-      >
-        <Input
-          className="tw-py-2"
-          {...register("attributes.clarity", {
-            required: "Clarity is required",
-          })}
-        />
-      </Form.Item>
-
-      <Form.Item
-        label="Transparency"
-        validateStatus={errors.attributes?.transparency ? "error" : ""}
-        help={errors.attributes?.transparency?.message}
-      >
-        <Input
-          className="tw-py-2"
-          {...register("attributes.transparency", {
-            required: "Transparency is required",
-          })}
-        />
-      </Form.Item>
-
-      <Form.Item
-        label="Cut"
-        validateStatus={errors.attributes?.cut ? "error" : ""}
-        help={errors.attributes?.cut?.message}
-      >
-        <Input
-          className="tw-py-2"
-          {...register("attributes.cut", { required: "Cut is required" })}
-        />
-      </Form.Item>
+        placeholder="Enter measurement"
+        control={control}
+        rules={{ required: "Measurement is required" }}
+        error={errors.attributes?.measurement}
+      />
 
       <div className="tw-flex tw-justify-end tw-gap-2">
         <Button

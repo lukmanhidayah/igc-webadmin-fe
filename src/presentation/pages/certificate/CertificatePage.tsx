@@ -23,12 +23,14 @@ const CertificatePage = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const {
-    register,
     handleSubmit,
     reset,
-    formState: { errors },
+    control,
+    formState: { errors},
     setValue,
-  } = useForm<ICertificateData>({});
+  } = useForm<ICertificateData>({
+    mode: "onChange"
+  });
 
   const token = useSelector(selectToken);
 
@@ -69,11 +71,10 @@ const CertificatePage = () => {
         onCancel={certificateViewModel.handleModalClose}
       >
         <CertificateForm
-          register={register}
+          control={control}
           handleSubmit={handleSubmit}
           onSubmit={certificateViewModel.handleFormSubmit}
           onReset={reset}
-          setValue={setValue}
           errors={errors}
         />
       </Modal>

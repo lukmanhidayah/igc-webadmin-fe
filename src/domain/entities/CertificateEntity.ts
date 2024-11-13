@@ -1,3 +1,4 @@
+import { Control, FieldErrors, UseFormHandleSubmit } from "react-hook-form";
 import { IResponsePaginationEntity } from "./ResponseEntity";
 import { IBaseState } from "./SharedEntity";
 
@@ -35,4 +36,13 @@ export interface ICertificateTableState extends IBaseState {
   data: ICertificateData[];
 }
 
-export interface ICertificateResponse extends IResponsePaginationEntity<ICertificateData> {}
+export interface ICertificateResponse
+  extends IResponsePaginationEntity<ICertificateData> {}
+
+export interface ICertificateFormProps {
+  control: Control<ICertificateData, any>;
+  onSubmit: (data: ICertificateData) => void;
+  onReset: () => void;
+  errors: FieldErrors<ICertificateData>;
+  handleSubmit: UseFormHandleSubmit<ICertificateData, undefined>;
+}
