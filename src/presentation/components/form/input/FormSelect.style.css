@@ -1,0 +1,5 @@
+
+.custom-select {
+  @apply focus-within:tw-ring-secondary-600 focus-within:tw-ring-1 focus-within:tw-border-transparent tw-rounded-md;
+  height: 40px;
+}

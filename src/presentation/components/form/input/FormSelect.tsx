@@ -4,6 +4,8 @@ import { Control, Controller, FieldError } from "react-hook-form";
 
 const { Option } = Select;
 
+import "./FormSelect.style.css";
+
 interface FormSelectProps {
   name: string;
   label: string;
@@ -35,7 +37,9 @@ const FormSelect: React.FC<FormSelectProps> = ({
       rules={rules}
       render={({ field }) => (
         <Select
-          className="tw-py-2 focus-within:tw-ring-secondary-600 focus-within:tw-ring-2 focus-within:tw-border-transparent"
+          variant="outlined"
+          className="custom-select"
+          showSearch
           {...field}
           placeholder={placeholder}
         >

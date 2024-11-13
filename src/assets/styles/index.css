@@ -53,7 +53,7 @@ th.ant-table-cell:first-child {
   padding-left: 10px !important;
 }
 
-td.ant-table-cell{
+td.ant-table-cell {
   padding: 10px 4px !important;
 }
 td.ant-table-cell:first-child {
@@ -78,7 +78,6 @@ td.ant-table-cell:first-child {
   padding: 14px !important;
   padding-top: 0 !important;
 }
-
 
 .ant-form-item {
   margin-bottom: 0 !important;
