@@ -1,28 +1,7 @@
 import { Card } from "antd";
 import { useLanguage } from "@lib/hooks/useLanguage";
-
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
 import MappingIcon from "@components/sidebar/MappingIcon";
 import tailwindMerge from "@lib/utils/tailwindMerge";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Tooltip,
-  Legend
-);
 
 const DashboardPage = () => {
   const { t } = useLanguage();
