@@ -1,48 +1,77 @@
-import { Card } from "antd";
+import { Card, Select } from "antd";
 import { useLanguage } from "@lib/hooks/useLanguage";
 import MappingIcon from "@components/sidebar/MappingIcon";
 import tailwindMerge from "@lib/utils/tailwindMerge";
+import { useState } from "react";
+
+const summaryData = [
+  {
+    title: "Sertifikat",
+    value: "100",
+    change: "+8% from yesterday",
+    color: "tw-bg-[#FFE2E5]",
+    icon: "cert",
+    bgIcon: "tw-bg-red-400",
+  },
+  {
+    title: "Memo",
+    value: "300",
+    change: "+5% from yesterday",
+    color: "tw-bg-[#FFF4DE]",
+    icon: "memo",
+    bgIcon: "tw-bg-yellow-400",
+  },
+  {
+    title: "Memo Non Origin",
+    value: "8",
+    change: "0.5% from yesterday",
+    color: "tw-bg-[#F3E8FF]",
+    icon: "memo",
+    bgIcon: "tw-bg-purple-400",
+  },
+];
+
+const filters = [
+  {
+    label: "Today",
+    value: "today",
+  },
+  {
+    label: "This Month",
+    value: "thisMonth",
+  },
+];
 
 const DashboardPage = () => {
   const { t } = useLanguage();
 
-  const summaryData = [
-    {
-      title: "Sertifikat",
-      value: "100",
-      change: "+8% from yesterday",
-      color: "tw-bg-[#FFE2E5]",
-      icon: "cert",
-      bgIcon: "tw-bg-red-400",
-    },
-    {
-      title: "Memo",
-      value: "300",
-      change: "+5% from yesterday",
-      color: "tw-bg-[#FFF4DE]",
-      icon: "memo",
-      bgIcon: "tw-bg-yellow-400",
-    },
-    {
-      title: "Memo Non Origin",
-      value: "8",
-      change: "0.5% from yesterday",
-      color: "tw-bg-[#F3E8FF]",
-      icon: "memo",
-      bgIcon: "tw-bg-purple-400",
-    },
-  ];
+  // state filter
+  const [filter, setFilter] = useState("today");
+
+  const handleChangeFilter = (value: string) => {
+    setFilter(value);
+  };
 
   return (
     <div className="tw-m-0 tw-p-6">
       <div className="tw-flex tw-flex-col tw-gap-4 tw-w-full">
         <div className="tw-flex tw-justify-between tw-w-full tw-gap-4">
           <div className="tw-w-full tw-bg-white tw-p-4 tw-rounded-md tw-shadow tw-overflow-hidden">
-            <div className="tw-mb-4">
-              <p className="tw-text-xl tw-font-semibold">
-                {t("dashboard.title")}
-              </p>
-              <p>{t("dashboard.description")}</p>
+            <div className="tw-mb-4 tw-flex tw-justify-between tw-items-start tw-gap-2">
+              <div>
+                <p className="tw-text-xl tw-font-semibold">
+                  {t("dashboard.title")}
+                </p>
+                <p>{t("dashboard.description")}</p>
+              </div>
+
+              <Select
+                suffixIcon
+                value={filter}
+                className="tw-w-[200px]"
+                options={filters}
+                onChange={handleChangeFilter}
+              />
             </div>
 
             {/* Summary Cards */}
