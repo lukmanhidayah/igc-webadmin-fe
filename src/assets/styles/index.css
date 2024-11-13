@@ -42,8 +42,38 @@ body.root-body .min-h-screen-with-header {
 
 th.ant-table-cell {
   /* clamp use ... */
+  padding: 10px 4px !important;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   background-color: transparent !important;
+}
+
+th.ant-table-cell:first-child {
+  padding-left: 10px !important;
+}
+
+td.ant-table-cell{
+  padding: 10px 4px !important;
+}
+td.ant-table-cell:first-child {
+  padding: 10px !important;
+}
+
+.ant-form-item-label {
+  font-weight: 500;
+  margin: 0 !important;
+}
+
+.ant-modal-content {
+  padding: 0 !important;
+}
+
+.modal-with-underline .ant-modal-header {
+  padding: 14px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.ant-modal-body {
+  padding: 14px !important;
 }

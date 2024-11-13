@@ -63,6 +63,8 @@ const MemoPage = () => {
         open={isModalOpen}
         centered
         footer={null}
+        className="modal-with-underline"
+        destroyOnClose
         onCancel={memoViewModel.handleModalClose}
       >
         <MemoForm

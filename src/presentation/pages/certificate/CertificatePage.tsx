@@ -65,6 +65,7 @@ const CertificatePage = () => {
         footer={null}
         destroyOnClose
         maskClosable={false}
+        className="modal-with-underline"
         onCancel={certificateViewModel.handleModalClose}
       >
         <CertificateForm
@@ -86,7 +87,7 @@ const CertificatePage = () => {
               onClick={certificateViewModel.handleModalOpen}
               type="primary"
               icon={<PlusSquareIcon />}
-              className="!tw-h-[40px] !tw-w-[150px] tw-font-semibold tw-text-white"
+              className="!tw-h-[45px] tw-rounded-md tw-shadow tw-font-semibold tw-text-white"
             >
               Add new data
             </Button>
