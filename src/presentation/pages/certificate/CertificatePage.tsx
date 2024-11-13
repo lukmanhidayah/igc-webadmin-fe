@@ -63,6 +63,8 @@ const CertificatePage = () => {
         open={isModalOpen}
         centered
         footer={null}
+        destroyOnClose
+        maskClosable={false}
         onCancel={certificateViewModel.handleModalClose}
       >
         <CertificateForm

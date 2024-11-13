@@ -1,4 +1,4 @@
-import { Button, Input, Select } from "antd";
+import { Button, Form, Input, Select } from "antd";
 import {
   UseFormHandleSubmit,
   UseFormRegister,
@@ -30,102 +30,107 @@ const CertificateForm: React.FC<CertificateFormProps> = ({
   handleSubmit,
 }) => {
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="tw-space-y-4">
-      <div>
-        <label className="tw-block tw-mb-1">Customer</label>
+    <Form
+      layout="vertical"
+      onFinish={handleSubmit(onSubmit)}
+      className="tw-space-y-4"
+    >
+      <Form.Item
+        label="Customer"
+        validateStatus={errors.member_phone_number ? "error" : ""}
+        help={errors.member_phone_number?.message}
+      >
         <Select
           className="tw-w-full tw-h-10"
           showSearch
-          defaultValue=""
           onChange={(value) => setValue("member_phone_number", value)}
           options={customers}
         />
-      </div>
+      </Form.Item>
 
-      <div>
-        <label className="tw-block tw-mb-1">Object Name</label>
+      <Form.Item
+        label="Object Name"
+        validateStatus={errors.attributes?.object_name ? "error" : ""}
+        help={errors.attributes?.object_name?.message}
+      >
         <Input
           className="tw-py-2"
           {...register("attributes.object_name", {
             required: "Object Name is required",
           })}
         />
-        {errors.attributes?.object_name && (
-          <p className="tw-text-red-500">
-            {errors.attributes?.object_name.message}
-          </p>
-        )}
-      </div>
-      <div>
-        <label className="tw-block tw-mb-1">Measurement</label>
+      </Form.Item>
+
+      <Form.Item
+        label="Measurement"
+        validateStatus={errors.attributes?.measurement ? "error" : ""}
+        help={errors.attributes?.measurement?.message}
+      >
         <Input
           className="tw-py-2"
           {...register("attributes.measurement", {
             required: "Measurement is required",
           })}
         />
-        {errors.attributes?.measurement && (
-          <p className="tw-text-red-500">
-            {errors.attributes?.measurement.message}
-          </p>
-        )}
-      </div>
-      <div>
-        <label className="tw-block tw-mb-1">Clarity</label>
+      </Form.Item>
+
+      <Form.Item
+        label="Clarity"
+        validateStatus={errors.attributes?.clarity ? "error" : ""}
+        help={errors.attributes?.clarity?.message}
+      >
         <Input
           className="tw-py-2"
           {...register("attributes.clarity", {
             required: "Clarity is required",
           })}
         />
-        {errors.attributes?.clarity && (
-          <p className="tw-text-red-500">
-            {errors.attributes?.clarity.message}
-          </p>
-        )}
-      </div>
-      <div>
-        <label className="tw-block tw-mb-1">Transparency</label>
+      </Form.Item>
+
+      <Form.Item
+        label="Transparency"
+        validateStatus={errors.attributes?.transparency ? "error" : ""}
+        help={errors.attributes?.transparency?.message}
+      >
         <Input
           className="tw-py-2"
           {...register("attributes.transparency", {
             required: "Transparency is required",
           })}
         />
-        {errors.attributes?.transparency && (
-          <p className="tw-text-red-500">
-            {errors.attributes?.transparency.message}
-          </p>
-        )}
-      </div>
-      <div>
-        <label className="tw-block tw-mb-1">Cut</label>
+      </Form.Item>
+
+      <Form.Item
+        label="Cut"
+        validateStatus={errors.attributes?.cut ? "error" : ""}
+        help={errors.attributes?.cut?.message}
+      >
         <Input
           className="tw-py-2"
           {...register("attributes.cut", { required: "Cut is required" })}
         />
-        {errors.attributes?.cut && (
-          <p className="tw-text-red-500">{errors.attributes?.cut.message}</p>
-        )}
-      </div>
-      <div className="tw-flex tw-justify-end tw-space-x-2">
+      </Form.Item>
+
+      <div className="tw-flex tw-justify-end tw-gap-2">
         <Button
           key="reset"
+          type="primary"
+          danger
           onClick={onReset}
-          className="tw-bg-red-500 tw-text-white tw-border-none"
+          className="tw-h-[40px] tw-font-semibold"
         >
           Reset
         </Button>
         <Button
           key="submit"
           type="primary"
-          className="tw-bg-blue-500 tw-text-white"
-          onClick={handleSubmit(onSubmit)}
+          className="tw-h-[40px] tw-font-semibold"
+          htmlType="submit"
         >
           Submit
         </Button>
       </div>
-    </form>
+    </Form>
   );
 };
 
