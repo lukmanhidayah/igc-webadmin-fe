@@ -25,4 +25,24 @@ export default class CertificateUseCase {
       return null;
     }
   }
+  async post(props: { token: string; data: any }) {
+    try {
+      const result = await this.certificateService.post(props);
+
+      logger("CertificateUseCase.post | response =>", result);
+
+      if (isNullOrEmpty(result?.data)) {
+        throw new Error(result?.meta?.message ?? "Failed to certificate post");
+      }
+
+      return result;
+    } catch (error: any) {
+      if (error.response?.status === 401) {
+        window.location.href = "/login";
+      } else {
+        logger("CertificateUseCase.post | error =>", error);
+      }
+      return null;
+    }
+  }
 }

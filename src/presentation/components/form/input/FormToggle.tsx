@@ -1,22 +1,20 @@
 import React from "react";
-import { Form, Input } from "antd";
+import { Form, Switch } from "antd";
 import { Control, Controller, FieldError } from "react-hook-form";
 
-interface FormInputProps {
+interface FormToggleProps {
   name: string;
   label: string;
-  placeholder?: string;
-  type?: string;
   control: Control<any>;
   rules?: Record<string, any>;
+  checkedChildren?: string;
+  unCheckedChildren?: string;
   error?: FieldError;
 }
 
-const FormInput: React.FC<FormInputProps> = ({
+const FormToggle: React.FC<FormToggleProps> = ({
   name,
   label,
-  placeholder,
-  type = "text",
   control,
   rules,
   error,
@@ -25,23 +23,21 @@ const FormInput: React.FC<FormInputProps> = ({
     label={label}
     validateStatus={error ? "error" : "success"}
     help={error ? error.message : null}
-    className="tw-w-full"
+    className="tw-w-full tw-flex tw-items-center"
   >
     <Controller
       name={name}
       control={control}
-      defaultValue={""}
       rules={rules}
       render={({ field }) => (
-        <Input
-          className="tw-py-2 focus-within:tw-ring-secondary-600 focus-within:tw-ring-2 focus-within:tw-border-transparent"
+        <Switch
           {...field}
-          placeholder={placeholder}
-          type={type}
+          checked={field.value}
+          onChange={(checked) => field.onChange(checked)}
         />
       )}
     />
   </Form.Item>
 );
 
-export default FormInput;
+export default FormToggle;

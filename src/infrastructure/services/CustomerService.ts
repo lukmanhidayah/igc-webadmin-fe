@@ -9,7 +9,7 @@ interface IGet {
 }
 
 class CustomerService {
-  async get(props: IGet): Promise<ICustomerResponse | null> {
+  async get(props: IGet): Promise<ICustomerResponse> {
     try {
       logger("CustomerService.get | token => ", props.token);
 
@@ -24,9 +24,7 @@ class CustomerService {
 
       logger("CustomerService.get | response => ", response.data);
 
-      return response.data
-        ? { meta: response.data.meta, data: response.data.data }
-        : null;
+      return response.data;
     } catch (error: any) {
       logger("CustomerService.get | error => ", error);
       throw error;

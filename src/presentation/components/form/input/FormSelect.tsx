@@ -14,6 +14,7 @@ interface FormSelectProps {
   control: Control<any>;
   rules?: Record<string, any>;
   error?: FieldError;
+  loading?: boolean;
 }
 
 const FormSelect: React.FC<FormSelectProps> = ({
@@ -24,6 +25,7 @@ const FormSelect: React.FC<FormSelectProps> = ({
   control,
   rules,
   error,
+  loading,
 }) => (
   <Form.Item
     label={label}
@@ -40,6 +42,7 @@ const FormSelect: React.FC<FormSelectProps> = ({
           variant="outlined"
           className="custom-select"
           showSearch
+          loading={loading}
           {...field}
           placeholder={placeholder}
         >

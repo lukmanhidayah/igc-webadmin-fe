@@ -10,5 +10,13 @@ export interface ICustomerTableState extends IBaseState {
   data: ICustomerData[];
 }
 
+export interface ICustomerOption {
+  isLoading: boolean;
+  data: {
+    label: string;
+    value: string;
+  }[];
+}
+
 export interface ICustomerResponse
   extends IResponsePaginationEntity<ICustomerData> {}

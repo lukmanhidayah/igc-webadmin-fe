@@ -35,12 +35,9 @@ const CustomerPage = () => {
 
   const getCustomer = async () => {
     const certificateUseCase = new CustomerUseCase();
-    const certificateViewModel = new CustomerViewModel(
-      certificateUseCase,
-      setTable
-    );
+    const certificateViewModel = new CustomerViewModel(certificateUseCase);
 
-    await certificateViewModel.getCustomer(token);
+    await certificateViewModel.getCustomer(token, setTable);
   };
   return (
     <div className="tw-m-0 tw-p-6 ">

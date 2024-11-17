@@ -1,8 +1,7 @@
-import { ICertificateData, ICertificateTableState } from "@domain/entities/CertificateEntity";
+import { ICertificateTableState } from "@domain/entities/CertificateEntity";
 import CertificateUseCase from "@domain/useCases/CertificateUseCase";
 import logger from "@lib/utils/logger";
 import { SetStateAction } from "react";
-import { SubmitHandler } from "react-hook-form";
 
 class CertificateViewModel {
   private certificateUseCase: CertificateUseCase;
@@ -63,9 +62,21 @@ class CertificateViewModel {
     this.resetForm();
   };
 
-  handleFormSubmit: SubmitHandler<ICertificateData> = (data) => {
-    console.log(data);
-    this.setIsModalOpen(false);
+  createCertificate = async (token: string, data: any) => {
+    const certData = new FormData();
+
+    certData.append("member_phone_number", data.member_phone_number);
+    certData.append("additional_comment", data.additional_comment);
+    certData.append("status", data.status ? "active": "inactive");
+    certData.append("type", "Sertifikat");
+
+
+    Object.entries(data.attributes).forEach(([key, value]) => {
+      certData.append(`attributes[${key}]`, value as any);
+    });
+
+    // set loading react hook form
+    await this.certificateUseCase.post({ token, data: certData });
   };
 }
 

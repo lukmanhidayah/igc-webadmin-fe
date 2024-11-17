@@ -1,6 +1,8 @@
-import { Control, FieldErrors, UseFormHandleSubmit } from "react-hook-form";
-import { IResponsePaginationEntity } from "./ResponseEntity";
+import { Control, FieldErrors } from "react-hook-form";
+import { IResponseEntity, IResponsePaginationEntity } from "./ResponseEntity";
 import { IBaseState } from "./SharedEntity";
+import { ISuggestionsState } from "./SuggestionEntity";
+import { ICustomerOption } from "./CustomerEntity";
 
 export interface ICertificateData {
   id: string;
@@ -19,7 +21,7 @@ export interface ICertificateData {
   attributes: {
     id_master: string;
     object_name: string;
-    object_image: any;
+    object_image: File | string;
     measurement: string;
     shape: string;
     clarity: string;
@@ -39,10 +41,15 @@ export interface ICertificateTableState extends IBaseState {
 export interface ICertificateResponse
   extends IResponsePaginationEntity<ICertificateData> {}
 
+export interface ICertificateCreateResponse
+  extends IResponseEntity<ICertificateData> {}
+
 export interface ICertificateFormProps {
   control: Control<ICertificateData, any>;
-  onSubmit: (data: ICertificateData) => void;
+  onSubmit: () => void;
+  isFormLoading: boolean;
   onReset: () => void;
   errors: FieldErrors<ICertificateData>;
-  handleSubmit: UseFormHandleSubmit<ICertificateData, undefined>;
+  suggestions: ISuggestionsState;
+  customers: ICustomerOption;
 }

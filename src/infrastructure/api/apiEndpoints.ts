@@ -8,6 +8,7 @@ const APIEndpoints = {
   login: "api/login",
   master: "api/masters",
   members: "api/members",
+  suggestions: "api/suggestion/all",
 };
 
 export default APIEndpoints;

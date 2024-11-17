@@ -1,23 +1,24 @@
-import { ICustomerTableState } from "@domain/entities/CustomerEntity";
+import {
+  ICustomerOption,
+  ICustomerTableState,
+} from "@domain/entities/CustomerEntity";
 import CustomerUseCase from "@domain/useCases/CustomerUseCase";
 import logger from "@lib/utils/logger";
 import { SetStateAction } from "react";
 
 class CustomerViewModel {
   private customerUseCase: CustomerUseCase;
-  private setTable: (value: SetStateAction<ICustomerTableState>) => void;
 
-  constructor(
-    customerUseCase: CustomerUseCase,
-    setTable: (value: SetStateAction<ICustomerTableState>) => void
-  ) {
+  constructor(customerUseCase: CustomerUseCase) {
     this.customerUseCase = customerUseCase;
-    this.setTable = setTable;
   }
 
-  async getCustomer(token: string) {
+  async getCustomer(
+    token: string,
+    setTable: (value: SetStateAction<ICustomerTableState>) => void
+  ) {
     try {
-      this.setTable((prevState) => ({
+      setTable((prevState) => ({
         ...prevState,
         isLoading: true,
       }));
@@ -27,20 +28,52 @@ class CustomerViewModel {
       logger("CustomerViewModel.getCustomer | response => ", response);
 
       if (response) {
-        this.setTable((prevState) => ({
+        setTable((prevState) => ({
           ...prevState,
           data: response.data,
           total: response.meta?.pagination?.total,
         }));
       }
-
-      this.setTable((prevState) => ({
+    } catch (error: any) {
+      logger("CustomerViewModel.getCustomer | error => ", error);
+      throw error;
+    } finally {
+      setTable((prevState) => ({
         ...prevState,
         isLoading: false,
       }));
+    }
+  }
+
+  async getCustomerOption(
+    token: string,
+    setOption: (value: SetStateAction<ICustomerOption>) => void
+  ) {
+    try {
+      setOption((prevState) => ({
+        ...prevState,
+        isLoading: true,
+      }));
+
+      const response = await this.customerUseCase.get({ token });
+
+      logger("CustomerViewModel.getCustomerOption | response => ", response);
+
+      if (response) {
+        const data = response.data.map((item) => ({
+          value: item.mobile_phone,
+          label: item.nama + " - " + item.mobile_phone,
+        }));
+        setOption((prevState) => ({
+          ...prevState,
+          data,
+        }));
+      }
     } catch (error: any) {
-      logger("CustomerViewModel.getCustomer | error => ", error);
-      this.setTable((prevState) => ({
+      logger("CustomerViewModel.getCustomerOption | error => ", error);
+      throw error;
+    } finally {
+      setOption((prevState) => ({
         ...prevState,
         isLoading: false,
       }));
