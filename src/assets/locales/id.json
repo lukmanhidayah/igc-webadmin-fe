@@ -44,8 +44,8 @@
     "title": "Pelanggan",
     "description": "List pelanggan yang telah di buat"
   },
-  "setting": {
-    "title": "Pengaturan",
-    "description": "List pengaturan yang telah di buat"
+  "trash": {
+    "title": "Tong Sampah",
+    "description": "List data yang telah di non aktifkan"
   }
 }

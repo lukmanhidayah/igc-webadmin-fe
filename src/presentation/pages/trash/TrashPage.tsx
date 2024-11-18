@@ -3,16 +3,15 @@ import Button from "@components/form/button/Button";
 import PlusSquareIcon from "@components/icon/PlusSquareIcon";
 import { useLanguage } from "@lib/hooks/useLanguage";
 
-
-const SettingPage = () => {
+const TrashPage = () => {
   const { t } = useLanguage();
 
   return (
     <div className="tw-m-0 tw-p-6 ">
       <div className="min-h-screen-with-header tw-bg-white tw-rounded tw-shadow">
         <HeaderContent
-          title={t("setting.title")}
-          description={t("setting.description")}
+          title={t("trash.title")}
+          description={t("trash.description")}
         >
           <div className="tw-w-full tw-flex tw-justify-end tw-items-center">
             <Button
@@ -29,4 +28,4 @@ const SettingPage = () => {
   );
 };
 
-export default SettingPage;
+export default TrashPage;

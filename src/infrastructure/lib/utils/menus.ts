@@ -42,11 +42,11 @@ const menus = [
   {
     menuId: 5,
     menuName: {
-      en: "Setting",
-      id: "Pengaturan",
+      en: "Trash",
+      id: "Tong Sampah",
     },
-    url: "/setting",
-    iconType: "setting",
+    url: "/trash",
+    iconType: "trash",
     menu: null,
   },
 ];

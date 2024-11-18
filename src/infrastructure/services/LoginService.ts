@@ -17,7 +17,12 @@ class LoginService {
           JSON.stringify({
             email,
             password,
-          })
+          }),
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
         );
 
       logger("LoginService.credentialLogin-success", response.data);

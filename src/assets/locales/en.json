@@ -3,29 +3,29 @@
     "form": {
       "title": "Nice to see you again",
       "description": "Welcome back! Please enter your details.",
-      "email": {
-        "label": "Email",
-        "placeholder": "Enter your email",
-        "not_null": "Email cannot be empty",
-        "invalid": "Email is not valid"
-      },
       "password": {
         "label": "Password",
         "placeholder": "*******",
         "not_null": "Password cannot be empty",
         "requirement": {
-          "info": "Password must contain:",
-          "requirement_1": "At least 8 characters.",
+          "info": "Password must be a combination of:",
+          "requirement_1": "At least 8 characters long.",
           "requirement_2": "Contains lowercase, uppercase letters, and numbers.",
           "requirement_3": "Contains special characters (e.g., @,#,$)."
         }
       },
-      "login_button": "Activate Account",
-      "error_message": "System encountered an issue"
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email",
+        "not_null": "Email cannot be empty",
+        "invalid": "Invalid email"
+      },
+      "login_button": "Login",
+      "error_message": "System error"
     },
     "banner": {
-      "title": "The Right Digital Payment Solution for Your Business",
-      "description": "Join us and enjoy the ease of digital payments, from receiving payments, sending payouts, and transferring funds online easily and quickly."
+      "title": "The right Digital Payment Solution for Your Business",
+      "description": "With us, enjoy the ease of digital payments from receiving payments, sending payouts, and transferring funds online, easily and quickly."
     }
   },
   "dashboard": {
@@ -34,18 +34,18 @@
   },
   "certificate": {
     "title": "Certificate",
-    "description": "List of certificates that have been created."
+    "description": "List of certificates that have been created"
   },
   "memo": {
     "title": "Memo",
-    "description": "List of memos that have been created."
+    "description": "List of memos that have been created"
   },
   "customer": {
     "title": "Customer",
-    "description": "List of customers that have been created."
+    "description": "List of customers that have been created"
   },
-  "setting": {
-    "title": "Settings",
-    "description": "List of settings that have been created."
+  "trash": {
+    "title": "Trash",
+    "description": "List of data that has been deactivated"
   }
 }

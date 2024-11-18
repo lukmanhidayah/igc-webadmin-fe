@@ -24,6 +24,7 @@ import PromoIcon from "@components/icon/PromoIcon";
 import SettingIcon from "@components/icon/SettingIcon";
 import TagIcon from "@components/icon/TagIcon";
 import TicketIcon from "@components/icon/TicketIcon";
+import TrashIcon from "@components/icon/TrashIcon";
 import UserIcon from "@components/icon/UserIcon";
 import WalletIcon from "@components/icon/WalletIcon";
 import XIcon from "@components/icon/XIcon";
@@ -107,6 +108,8 @@ const MappingIcon = (props: MappingTIcon) => {
       return <CodeIcon width={24} height={24} className={props.className} />;
     case "user":
       return <UserIcon width={24} height={24} className={props.className} />;
+    case "trash":
+      return <TrashIcon width={24} height={24} className={props.className} />;
     default:
       return <DotIcon width={20} height={20} className={props.className} />;
   }
