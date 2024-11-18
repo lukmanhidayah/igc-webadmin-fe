@@ -37,8 +37,11 @@ export interface IDashboardState {
 }
 
 export interface IColumn<T> {
-  onEdit: (row: T) => void;
+  onEdit?: (row: T) => void;
   onDetail?: (row: T) => void;
+  onDelete?: (row: T) => void;
+  onRestore?: (row: T) => void;
+  onDestroy?: (row: T) => void;
 }
 
 export interface IDataTable<T> extends IBaseState {

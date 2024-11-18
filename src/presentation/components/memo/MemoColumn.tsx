@@ -47,16 +47,16 @@ const MemoColumn = (props: IColumn<IMemoData>): ColumnsType<IMemoData> => [
       return (
         <div className="tw-flex tw-flex-wrap tw-gap-4 tw-w-full tw-justify-center">
           <Button
-            onClick={() => props.onEdit(record)}
+            onClick={() => props.onEdit && props.onEdit(record)}
             type="primary"
-            className="!tw-h-[40px] tw-rounded-md tw-shadow !tw-w-[100px] tw-font-semibold  !tw-bg-green-500 !tw-border-green-500 hover:!tw-bg-green-600"
+            className="!tw-h-[40px] tw-rounded-md tw-shadow !tw-w-[80px] tw-font-semibold  !tw-bg-green-500 !tw-border-green-500 hover:!tw-bg-green-600"
           >
             Edit
           </Button>
           <Button
             type="primary"
             onClick={() => props.onDetail && props.onDetail(record)}
-            className="!tw-h-[40px] !tw-w-[100px] tw-rounded-md tw-shadow tw-font-semibold "
+            className="!tw-h-[40px] !tw-w-[80px] tw-rounded-md tw-shadow tw-font-semibold "
           >
             Detail
           </Button>

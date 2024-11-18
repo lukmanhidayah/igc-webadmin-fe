@@ -1,11 +1,11 @@
-import { ICertificateData } from "@domain/entities/CertificateEntity";
+import { ITrashData } from "@domain/entities/TrashEntity";
 import { IColumn } from "@domain/entities/DashboardEntity";
 import { Button } from "antd";
 import { ColumnsType } from "antd/es/table";
 
-const CertificateColumn = (
-  props: IColumn<ICertificateData>
-): ColumnsType<ICertificateData> => [
+const TrashColumn = (
+  props: Pick<IColumn<ITrashData>, "onRestore" | "onDestroy">
+): ColumnsType<ITrashData> => [
   {
     title: "No",
     dataIndex: "index",
@@ -44,18 +44,19 @@ const CertificateColumn = (
       return (
         <div className="tw-flex tw-flex-wrap tw-gap-4 tw-w-full tw-justify-center">
           <Button
-            onClick={() => props.onEdit && props.onEdit(record)}
+            onClick={() => props.onRestore && props.onRestore(record)}
             type="primary"
-            className="!tw-h-[40px] tw-rounded-md tw-shadow !tw-w-[80px] tw-font-semibold  !tw-bg-green-500 !tw-border-green-500 hover:!tw-bg-green-600"
+            className="!tw-h-[40px] !tw-w-[80px] tw-rounded-md tw-shadow tw-font-semibold "
           >
-            Edit
+            Restore
           </Button>
           <Button
             type="primary"
-            onClick={() => props.onDetail && props.onDetail(record)}
+            danger
+            onClick={() => props.onDestroy && props.onDestroy(record)}
             className="!tw-h-[40px] !tw-w-[80px] tw-rounded-md tw-shadow tw-font-semibold "
           >
-            Detail
+            Destroy
           </Button>
         </div>
       );
@@ -63,4 +64,4 @@ const CertificateColumn = (
   },
 ];
 
-export default CertificateColumn;
+export default TrashColumn;

@@ -9,6 +9,7 @@ const APIEndpoints = {
   master: "api/masters",
   members: "api/members",
   suggestions: "api/suggestion/all",
+  trash: "api/masters/thrash",
 };
 
 export default APIEndpoints;
